@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/09/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>星穹铁道grub主题</title>
+    <url>/2024/09/26/%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93grub%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">链接</a></p>
+<h3 id="下载-解压"><a href="#下载-解压" class="headerlink" title="下载 &amp; 解压"></a>下载 &amp; 解压</h3><p>下载解压到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Guinaifen /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
+<h3 id="将主题复制到grub目录"><a href="#将主题复制到grub目录" class="headerlink" title="将主题复制到grub目录"></a>将主题复制到grub目录</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Guinaifen /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
+<h3 id="编辑-grub-文件"><a href="#编辑-grub-文件" class="headerlink" title="编辑 grub 文件"></a>编辑 grub 文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
+<h3 id="在文本文件底部添加主题"><a href="#在文本文件底部添加主题" class="headerlink" title="在文本文件底部添加主题"></a>在文本文件底部添加主题</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Guinaifen/theme.txt&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="更新-grub"><a href="#更新-grub" class="headerlink" title="更新 grub"></a>更新 grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<h3 id="最后重启电脑"><a href="#最后重启电脑" class="headerlink" title="最后重启电脑"></a>最后重启电脑</h3>]]></content>
+      <tags>
+        <tag>grub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2024/09/24/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>你的文章内容</p>
+<p><img src="/images/wt.jpg" alt="(可以写关于图片的描述)"></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主题</title>
+    <url>/2024/09/26/%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+</search>

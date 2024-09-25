@@ -1,0 +1,35 @@
+/* 导航栏做居中处理 */
+#nav-right{
+    flex:1 1 auto;
+    justify-content: flex-end;
+    margin-left: auto;
+    display: flex;
+    flex-wrap:nowrap;
+}
+
+
+#page-header #post-info {
+    position: absolute;
+    /* 这里的bottom：的值可以调节标题的上下位置 */
+    bottom: 160px;
+    padding: 0 8%;
+    width: 100%;
+    text-align: center;
+  }
+
+/* 时间轴样式 */
+#page-header {
+  position: relative;
+  width: 100%;
+  /* background-color: #49b1f5; */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  background-image: url(https://cdn.jsdelivr.net/gh/NorthPoet/images/images/picture-2312336.jpg);
+}
+
