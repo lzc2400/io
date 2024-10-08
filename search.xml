@@ -41,11 +41,15 @@
     <content><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">链接</a></p>
 <h3 id="下载-解压"><a href="#下载-解压" class="headerlink" title="下载 &amp; 解压"></a>下载 &amp; 解压</h3><p>下载解压到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Guinaifen /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
-<h3 id="将主题复制到grub目录"><a href="#将主题复制到grub目录" class="headerlink" title="将主题复制到grub目录"></a>将主题复制到grub目录</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Guinaifen /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
-<h3 id="编辑-grub-文件"><a href="#编辑-grub-文件" class="headerlink" title="编辑 grub 文件"></a>编辑 grub 文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
-<h3 id="在文本文件底部添加主题"><a href="#在文本文件底部添加主题" class="headerlink" title="在文本文件底部添加主题"></a>在文本文件底部添加主题</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Guinaifen/theme.txt&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="更新-grub"><a href="#更新-grub" class="headerlink" title="更新 grub"></a>更新 grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-<h3 id="最后重启电脑"><a href="#最后重启电脑" class="headerlink" title="最后重启电脑"></a>最后重启电脑</h3>]]></content>
+<h3 id="将主题复制到grub目录"><a href="#将主题复制到grub目录" class="headerlink" title="将主题复制到grub目录"></a>将主题复制到grub目录</h3><h3 id="以Firefly-cn为例"><a href="#以Firefly-cn为例" class="headerlink" title="以Firefly_cn为例"></a>以Firefly_cn为例</h3><p>下载Firefly压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
+<p>###编辑grub文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
+<p>文本底部添加主题<br>按i进入进入编辑模式<br>esc退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="更新grub"><a href="#更新grub" class="headerlink" title="更新grub"></a>更新grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
+<h3 id="至此大功告成，重启电脑"><a href="#至此大功告成，重启电脑" class="headerlink" title="至此大功告成，重启电脑"></a>至此大功告成，重启电脑</h3>]]></content>
       <tags>
         <tag>grub</tag>
       </tags>

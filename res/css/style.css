@@ -1,8 +1,7 @@
 /* 导航栏做居中处理 */
 #nav-right{
     flex:1 1 auto;
-    justify-content: flex-end;
-    margin-left: auto;
+    justify-content: center;
     display: flex;
     flex-wrap:nowrap;
 }
@@ -33,3 +32,23 @@
   background-image: url(https://cdn.jsdelivr.net/gh/NorthPoet/images/images/picture-2312336.jpg);
 }
 
+/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */
+.layout_post>#post {
+  /* 以下代表透明度为0.7 可以自行修改*/
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 所有页面背景 */
+#aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
+  /* 以下代表透明度为0.7 */
+  background: rgba(255, 255, 255, 0.5);
+}
+/*侧边卡片的透明度 */
+:root {
+--card-bg: rgba(255, 255, 255, 0.5);
+}
+/* 页脚透明 */
+#footer {
+/* 以下代表透明度为0.7 */
+background: rgba(255, 255, 255, 0);
+}
