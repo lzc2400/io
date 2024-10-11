@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2024/09/25/hello-world/</url>
+    <url>/posts/16107/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -19,13 +19,24 @@
 ]]></content>
   </entry>
   <entry>
-    <title>主题</title>
-    <url>/2024/09/26/%E4%B8%BB%E9%A2%98/</url>
-    <content><![CDATA[]]></content>
+    <title>星穹铁道grub主题</title>
+    <url>/posts/14870/</url>
+    <content><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">GRUB主题</a><br><a href="https://github.com/voidlhf/StarRailGrubThemes">github地址</a></p>
+<h3 id="以Firefly-cn为例"><a href="#以Firefly-cn为例" class="headerlink" title="以Firefly_cn为例"></a>以Firefly_cn为例</h3><p>下载Firefly压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
+<h3 id="编辑grub文件"><a href="#编辑grub文件" class="headerlink" title="编辑grub文件"></a>编辑grub文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
+<p>文本底部添加主题<br>按i进入进入编辑模式<br>esc退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="更新grub"><a href="#更新grub" class="headerlink" title="更新grub"></a>更新grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
+<h3 id="至此大功告成，重启电脑"><a href="#至此大功告成，重启电脑" class="headerlink" title="至此大功告成，重启电脑!"></a>至此大功告成，重启电脑!</h3>]]></content>
+      <tags>
+        <tag>grub</tag>
+      </tags>
   </entry>
   <entry>
     <title>测试</title>
-    <url>/2024/09/24/%E6%B5%8B%E8%AF%95/</url>
+    <url>/posts/37773/</url>
     <content><![CDATA[<p>你的文章内容</p>
 <p><img src="/images/wt.jpg" alt="(可以写关于图片的描述)"></p>
 ]]></content>
@@ -36,22 +47,8 @@
       </tags>
   </entry>
   <entry>
-    <title>星穹铁道grub主题</title>
-    <url>/2024/09/26/%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93grub%E4%B8%BB%E9%A2%98/</url>
-    <content><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">链接</a></p>
-<h3 id="下载-解压"><a href="#下载-解压" class="headerlink" title="下载 &amp; 解压"></a>下载 &amp; 解压</h3><p>下载解压到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Guinaifen /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
-<h3 id="将主题复制到grub目录"><a href="#将主题复制到grub目录" class="headerlink" title="将主题复制到grub目录"></a>将主题复制到grub目录</h3><h3 id="以Firefly-cn为例"><a href="#以Firefly-cn为例" class="headerlink" title="以Firefly_cn为例"></a>以Firefly_cn为例</h3><p>下载Firefly压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
-<p>###编辑grub文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
-<p>文本底部添加主题<br>按i进入进入编辑模式<br>esc退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="更新grub"><a href="#更新grub" class="headerlink" title="更新grub"></a>更新grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-
-<h3 id="至此大功告成，重启电脑"><a href="#至此大功告成，重启电脑" class="headerlink" title="至此大功告成，重启电脑"></a>至此大功告成，重启电脑</h3>]]></content>
-      <tags>
-        <tag>grub</tag>
-      </tags>
+    <title>主题</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
