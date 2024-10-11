@@ -45,3 +45,10 @@
 /* 以下代表透明度为0.7 */
 background: rgba(255, 255, 255, 0);
 }
+
+#nav .menus_items {
+  position: absolute;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+}
