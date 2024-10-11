@@ -1,120 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>css和js代码</title>
-      <link href="/59732/"/>
-      <url>/59732/</url>
-      
-        <content type="html"><![CDATA[<p>内容来自网上</p><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>导航栏居中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#nav .menus_items &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: fit-content;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>透明度调节</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */</span><br><span class="line">.layout_post&gt;#post &#123;</span><br><span class="line">  /* 以下代表透明度为0.7 可以自行修改*/</span><br><span class="line">  background: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 所有页面背景 */</span><br><span class="line">#aside_content .card-widget, #recent-posts&gt;.recent-post-item, .layout_page&gt;div:first-child:not(.recent-posts), .layout_post&gt;#page, .layout_post&gt;#post, .read-mode .layout_post&gt;#post&#123;</span><br><span class="line">  /* 以下代表透明度为0.7 */</span><br><span class="line">  background: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/*侧边卡片的透明度 */</span><br><span class="line">:root &#123;</span><br><span class="line">--card-bg: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 页脚透明 */</span><br><span class="line">#footer &#123;</span><br><span class="line">/* 以下代表透明度为0.7 */</span><br><span class="line">background: rgba(255, 255, 255, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>标签页添加 w(ﾟДﾟ)w 不要走！再看看嘛！，回到本站显示♪(^∇^*)欢迎回来！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  //动态标题</span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener(&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        //离开当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;w(ﾟДﾟ)w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout(titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        //返回当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;♪(^∇^*)欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        //两秒后变回正常标题</span><br><span class="line">        titleTime = setTimeout(function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>添加自定义css和js文件</title>
-      <link href="/45104/"/>
-      <url>/45104/</url>
-      
-        <content type="html"><![CDATA[<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>如果想魔改和美化，添加自定义文件是不可避免的。下面来详细说一下css和js文件的创建和引入，其他文件同理。<br>我们找到博客根目录下的source文件夹（主题的source虽然也可以，但是不推荐）<br>在里面创建js和css文件夹，也可以创建其他文件夹，例如存放图片的img文件夹，存放字体的font文件夹等等。</p><h2 id="引入文件"><a href="#引入文件" class="headerlink" title="引入文件"></a>引入文件</h2><p>在主题配置文件（_config.butterfly.yml）里面的inject引入（不知道这个文件的去看文档）<br>css 文件一般在head引入，js 文件一般在bottom里引入，特殊情况除外。<br>例如引入 css 文件夹里面的 style.css 和 js 文件夹里面的 script.js，可以这样写:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">    # 自定义css</span><br><span class="line">    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css?1&quot;&gt;</span><br><span class="line">    # 静态文件后面加个  ?任意内容  可以在每次更新之后用户自动重新请求.</span><br><span class="line">    # 例如添加 ?1 ,在修改此文件后改成 ?2 ,用户访问你的网站时,不会使用本地的缓存,而是请求新的内容。没修改的话就不用动。</span><br><span class="line">  bottom:</span><br><span class="line">    # 自定义js</span><br><span class="line">    - &lt;script src=&quot;/js/script.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    # 引入多个文件就直接往下复制一行改一下文件名即可，如下：</span><br><span class="line">    - &lt;script src=&quot;/js/script1.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    - &lt;script src=&quot;/js/script2.js?1&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>注意：路径最前面是斜杠，而不是点斜杠，即 &#x2F;xx&#x2F;xxx.js，而不是.&#x2F;xx&#x2F;xxx.js。<br>参考链接：<a href="https://blog.leonus.cn/2022/custom.html">https://blog.leonus.cn/2022/custom.html</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Butterfly 美化</title>
-      <link href="/14880/"/>
-      <url>/14880/</url>
-      
-        <content type="html"><![CDATA[<h2 id="生成文章唯一链接"><a href="#生成文章唯一链接" class="headerlink" title="生成文章唯一链接"></a>生成文章唯一链接</h2><p>Hexo的默认文章链接格式是年，月，日，标题这种格式来生成。<br>如果标题是中文，那URL链接就会包含中文。</p><p>1、安装插件，在博客根目录打开终端，运行以下指令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure><p>2、插件安装成功后，在根目录的配置文件 _config.yml 找到 permalink：<br>修改为</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">permalink: :abbrlink/</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc16      #support crc16(default) and crc32</span><br><span class="line">  rep: dec        #support dec(default) and hex</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="顶部图"><a href="#顶部图" class="headerlink" title="顶部图"></a>顶部图</h2><table><thead><tr><th>配置</th><th>解释</th></tr></thead><tbody><tr><td>index_img</td><td>主页的 top_img</td></tr><tr><td>default_top_img</td><td>默认的 top_img，当页面的 top_img 没有配置时，会显示 default_top_img</td></tr><tr><td>archive_img</td><td>归档页面的 top_img</td></tr><tr><td>tag_img</td><td>tag 子页面 的 默认 top_img</td></tr><tr><td>tag_per_img</td><td>tag 子页面的 top_img，可配置每个 tag 的 top_img</td></tr><tr><td>category_img</td><td>category 子页面 的 默认 top_img</td></tr><tr><td>category_per_img</td><td>category 子页面的 top_img，可配置每个 category 的 top_img</td></tr></tbody></table><p>其它页面 （tags&#x2F;categories&#x2F; 自建页面）和文章页的 top_img ，请到对应的 md 页面设置 front-matter 中的 top_img</p><p>tag_per_img 和 category_per_img 是 3.2.0 新增的内容，可对 tag 和 category 进行单独的配置</p><p>并不推荐为每个 tag 和每个 category 都配置不同的顶部图，因为配置太多会拖慢生成速度</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tag_per_img：</span><br><span class="line">  aplayer: https://xxxxxx.png</span><br><span class="line">  android: ddddddd.png</span><br><span class="line"></span><br><span class="line">category_per_img：</span><br><span class="line">  随想: hdhdh.png</span><br><span class="line">  推荐: ddjdjdjd.png</span><br></pre></td></tr></table></figure><h2 id="footer-背景"><a href="#footer-背景" class="headerlink" title="footer 背景"></a>footer 背景</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># footer是否显示图片背景(与 top_img一致)</span><br><span class="line">footer_bg: true</span><br></pre></td></tr></table></figure><h2 id="网站副标题"><a href="#网站副标题" class="headerlink" title="网站副标题"></a>网站副标题</h2><p>可设置主页中展示的网站副标题或者自己喜欢的座右铭</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">source: 1</span><br><span class="line"># If you close the typewriter effect, the subtitle will only show the first line of sub</span><br><span class="line">sub:</span><br><span class="line">  - 你好啊！(´◊ω◊｀) </span><br></pre></td></tr></table></figure><h2 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h2><p>可自行决定哪个项目需要显示，可决定位置，也可以设置不显示侧边栏。<br>在Aside Settings中设置</p><h2 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h2><p>根目录执行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount —save or yarn add hexo-wordcount</span><br></pre></td></tr></table></figure><p>主题配置wordcount:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wordcount:</span><br><span class="line">  enable: true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure><h2 id="动态标题"><a href="#动态标题" class="headerlink" title="动态标题"></a>动态标题</h2><p>  标签页显示 w(ﾟДﾟ)w 不要走！再看看嘛！，回到本站显示♪(^∇^*)欢迎回来！<br>  在自定义JS中加入以下代码：<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  //动态标题</span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener(&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        //离开当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;w(ﾟДﾟ)w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout(titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        //返回当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;♪(^∇^*)欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        //两秒后变回正常标题</span><br><span class="line">        titleTime = setTimeout(function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 美化 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>星穹铁道grub主题</title>
-      <link href="/14870/"/>
-      <url>/14870/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">GRUB主题</a><br><a href="https://github.com/voidlhf/StarRailGrubThemes">github地址</a></p><h3 id="以Firefly-cn为例"><a href="#以Firefly-cn为例" class="headerlink" title="以Firefly_cn为例"></a>以Firefly_cn为例</h3><p><img src="/res/img/post/Firefly_cn.png"><br>下载Firefly压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure><h3 id="编辑grub文件"><a href="#编辑grub文件" class="headerlink" title="编辑grub文件"></a>编辑grub文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure><p>文本底部添加主题<br>按i进入进入编辑模式<br>esc退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br></pre></td></tr></table></figure><h3 id="更新grub"><a href="#更新grub" class="headerlink" title="更新grub"></a>更新grub</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure><h3 id="至此大功告成，重启电脑"><a href="#至此大功告成，重启电脑" class="headerlink" title="至此大功告成，重启电脑!"></a>至此大功告成，重启电脑!</h3>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> grub </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>主题</title>
-      <link href="/undefined/"/>
-      <url>/undefined/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/16107/"/>
-      <url>/16107/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试</title>
-      <link href="/37773/"/>
-      <url>/37773/</url>
-      
-        <content type="html"><![CDATA[<p>你的文章内容</p><p><img src="/images/wt.jpg" alt="(可以写关于图片的描述)"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-            <tag> Hexo </tag>
-            
-            <tag> 分享 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>Butterfly 美化</title>
+    <url>/14880/</url>
+    <content><![CDATA[<h2 id="生成文章唯一链接"><a href="#生成文章唯一链接" class="headerlink" title="生成文章唯一链接"></a>生成文章唯一链接</h2><p>Hexo的默认文章链接格式是年，月，日，标题这种格式来生成。<br>如果标题是中文，那URL链接就会包含中文。</p>
+<p>1、安装插件，在博客根目录打开终端，运行以下指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+
+<p>2、插件安装成功后，在根目录的配置文件 _config.yml 找到 permalink：<br>修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">permalink: :abbrlink/</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc16      #support crc16(default) and crc32</span><br><span class="line">  rep: dec        #support dec(default) and hex</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="顶部图"><a href="#顶部图" class="headerlink" title="顶部图"></a>顶部图</h2><table>
+<thead>
+<tr>
+<th>配置</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index_img</td>
+<td>主页的 top_img</td>
+</tr>
+<tr>
+<td>default_top_img</td>
+<td>默认的 top_img，当页面的 top_img 没有配置时，会显示 default_top_img</td>
+</tr>
+<tr>
+<td>archive_img</td>
+<td>归档页面的 top_img</td>
+</tr>
+<tr>
+<td>tag_img</td>
+<td>tag 子页面 的 默认 top_img</td>
+</tr>
+<tr>
+<td>tag_per_img</td>
+<td>tag 子页面的 top_img，可配置每个 tag 的 top_img</td>
+</tr>
+<tr>
+<td>category_img</td>
+<td>category 子页面 的 默认 top_img</td>
+</tr>
+<tr>
+<td>category_per_img</td>
+<td>category 子页面的 top_img，可配置每个 category 的 top_img</td>
+</tr>
+</tbody></table>
+<p>其它页面 （tags&#x2F;categories&#x2F; 自建页面）和文章页的 top_img ，请到对应的 md 页面设置 front-matter 中的 top_img</p>
+<p>tag_per_img 和 category_per_img 是 3.2.0 新增的内容，可对 tag 和 category 进行单独的配置</p>
+<p>并不推荐为每个 tag 和每个 category 都配置不同的顶部图，因为配置太多会拖慢生成速度</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tag_per_img：</span><br><span class="line">  aplayer: https://xxxxxx.png</span><br><span class="line">  android: ddddddd.png</span><br><span class="line"></span><br><span class="line">category_per_img：</span><br><span class="line">  随想: hdhdh.png</span><br><span class="line">  推荐: ddjdjdjd.png</span><br></pre></td></tr></table></figure>
+
+<h2 id="footer-背景"><a href="#footer-背景" class="headerlink" title="footer 背景"></a>footer 背景</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># footer是否显示图片背景(与 top_img一致)</span><br><span class="line">footer_bg: true</span><br></pre></td></tr></table></figure>
+<h2 id="网站副标题"><a href="#网站副标题" class="headerlink" title="网站副标题"></a>网站副标题</h2><p>可设置主页中展示的网站副标题或者自己喜欢的座右铭</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source: 1</span><br><span class="line"># If you close the typewriter effect, the subtitle will only show the first line of sub</span><br><span class="line">sub:</span><br><span class="line">  - 你好啊！(´◊ω◊｀) </span><br></pre></td></tr></table></figure>
+<h2 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h2><p>可自行决定哪个项目需要显示，可决定位置，也可以设置不显示侧边栏。<br>在Aside Settings中设置</p>
+<h2 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h2><p>根目录执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-wordcount —save or yarn add hexo-wordcount</span><br></pre></td></tr></table></figure>
+<p>主题配置wordcount:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wordcount:</span><br><span class="line">  enable: true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure>
+<h2 id="动态标题"><a href="#动态标题" class="headerlink" title="动态标题"></a>动态标题</h2><p>  标签页显示 w(ﾟДﾟ)w 不要走！再看看嘛！，回到本站显示♪(^∇^*)欢迎回来！<br>  在自定义JS中加入以下代码：<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  //动态标题</span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener(&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        //离开当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;w(ﾟДﾟ)w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout(titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        //返回当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;♪(^∇^*)欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        //两秒后变回正常标题</span><br><span class="line">        titleTime = setTimeout(function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>美化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css和js代码</title>
+    <url>/59732/</url>
+    <content><![CDATA[<p>内容来自网上</p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>导航栏居中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#nav .menus_items &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: fit-content;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>透明度调节</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */</span><br><span class="line">.layout_post&gt;#post &#123;</span><br><span class="line">  /* 以下代表透明度为0.7 可以自行修改*/</span><br><span class="line">  background: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 所有页面背景 */</span><br><span class="line">#aside_content .card-widget, #recent-posts&gt;.recent-post-item, .layout_page&gt;div:first-child:not(.recent-posts), .layout_post&gt;#page, .layout_post&gt;#post, .read-mode .layout_post&gt;#post&#123;</span><br><span class="line">  /* 以下代表透明度为0.7 */</span><br><span class="line">  background: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/*侧边卡片的透明度 */</span><br><span class="line">:root &#123;</span><br><span class="line">--card-bg: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 页脚透明 */</span><br><span class="line">#footer &#123;</span><br><span class="line">/* 以下代表透明度为0.7 */</span><br><span class="line">background: rgba(255, 255, 255, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>标签页添加 w(ﾟДﾟ)w 不要走！再看看嘛！，回到本站显示♪(^∇^*)欢迎回来！</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  //动态标题</span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener(&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        //离开当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;w(ﾟДﾟ)w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout(titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        //返回当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;♪(^∇^*)欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        //两秒后变回正常标题</span><br><span class="line">        titleTime = setTimeout(function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>主题</title>
+    <url>/undefined/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/16107/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>星穹铁道grub主题</title>
+    <url>/14870/</url>
+    <content><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">GRUB主题</a><br><a href="https://github.com/voidlhf/StarRailGrubThemes">github地址</a></p>
+<h3 id="以Firefly-cn为例"><a href="#以Firefly-cn为例" class="headerlink" title="以Firefly_cn为例"></a>以Firefly_cn为例</h3><p><img src="/res/img/post/Firefly_cn.png"><br>下载Firefly压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
+<h3 id="编辑grub文件"><a href="#编辑grub文件" class="headerlink" title="编辑grub文件"></a>编辑grub文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
+<p>文本底部添加主题<br>按i进入进入编辑模式<br>esc退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="更新grub"><a href="#更新grub" class="headerlink" title="更新grub"></a>更新grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
+<h3 id="至此大功告成，重启电脑"><a href="#至此大功告成，重启电脑" class="headerlink" title="至此大功告成，重启电脑!"></a>至此大功告成，重启电脑!</h3>]]></content>
+      <tags>
+        <tag>grub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/37773/</url>
+    <content><![CDATA[<p>你的文章内容</p>
+<p><img src="/images/wt.jpg" alt="(可以写关于图片的描述)"></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>添加自定义css和js文件</title>
+    <url>/45104/</url>
+    <content><![CDATA[<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>如果想魔改和美化，添加自定义文件是不可避免的。下面来详细说一下css和js文件的创建和引入，其他文件同理。<br>我们找到博客根目录下的source文件夹（主题的source虽然也可以，但是不推荐）<br>在里面创建js和css文件夹，也可以创建其他文件夹，例如存放图片的img文件夹，存放字体的font文件夹等等。</p>
+<h2 id="引入文件"><a href="#引入文件" class="headerlink" title="引入文件"></a>引入文件</h2><p>在主题配置文件（_config.butterfly.yml）里面的inject引入（不知道这个文件的去看文档）<br>css 文件一般在head引入，js 文件一般在bottom里引入，特殊情况除外。<br>例如引入 css 文件夹里面的 style.css 和 js 文件夹里面的 script.js，可以这样写:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">    # 自定义css</span><br><span class="line">    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css?1&quot;&gt;</span><br><span class="line">    # 静态文件后面加个  ?任意内容  可以在每次更新之后用户自动重新请求.</span><br><span class="line">    # 例如添加 ?1 ,在修改此文件后改成 ?2 ,用户访问你的网站时,不会使用本地的缓存,而是请求新的内容。没修改的话就不用动。</span><br><span class="line">  bottom:</span><br><span class="line">    # 自定义js</span><br><span class="line">    - &lt;script src=&quot;/js/script.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    # 引入多个文件就直接往下复制一行改一下文件名即可，如下：</span><br><span class="line">    - &lt;script src=&quot;/js/script1.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    - &lt;script src=&quot;/js/script2.js?1&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：路径最前面是斜杠，而不是点斜杠，即 &#x2F;xx&#x2F;xxx.js，而不是.&#x2F;xx&#x2F;xxx.js。<br>参考链接：<a href="https://blog.leonus.cn/2022/custom.html">https://blog.leonus.cn/2022/custom.html</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>看看烟花吧</title>
+    <url>/63552/</url>
+    <content><![CDATA[]]></content>
+  </entry>
 </search>
