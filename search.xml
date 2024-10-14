@@ -65,10 +65,16 @@
       </tags>
   </entry>
   <entry>
+    <title>主题</title>
+    <url>/undefined/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Markdown 语法速查</title>
     <url>/3218/</url>
     <content><![CDATA[<h1 id="Markdown-语法速查"><a href="#Markdown-语法速查" class="headerlink" title="Markdown 语法速查"></a>Markdown 语法速查</h1><p>Markdown 是一种轻量级标记语言，广泛用于文档和博客的撰写。以下是 Markdown 的常用语法速查表，方便查阅和使用。</p>
 <hr>
+<p>Markdown 基本语法：<a href="https://markdown.com.cn/basic-syntax/">https://markdown.com.cn/basic-syntax/</a></p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用 <code>#</code> 号表示不同级别的标题，<code>#</code> 的数量对应标题级别。</p>
 <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
 
@@ -161,22 +167,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/16107/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>css和js代码</title>
+    <url>/59732/</url>
+    <content><![CDATA[<p>内容来自网上</p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>导航栏居中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#nav .menus_items &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: fit-content;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>透明度调节</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */</span><br><span class="line">.layout_post&gt;#post &#123;</span><br><span class="line">  /* 以下代表透明度为0.7 可以自行修改*/</span><br><span class="line">  background: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 所有页面背景 */</span><br><span class="line">#aside_content .card-widget, #recent-posts&gt;.recent-post-item, .layout_page&gt;div:first-child:not(.recent-posts), .layout_post&gt;#page, .layout_post&gt;#post, .read-mode .layout_post&gt;#post&#123;</span><br><span class="line">  /* 以下代表透明度为0.7 */</span><br><span class="line">  background: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/*侧边卡片的透明度 */</span><br><span class="line">:root &#123;</span><br><span class="line">--card-bg: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 页脚透明 */</span><br><span class="line">#footer &#123;</span><br><span class="line">/* 以下代表透明度为0.7 */</span><br><span class="line">background: rgba(255, 255, 255, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>标签页添加 w(ﾟДﾟ)w 不要走！再看看嘛！，回到本站显示♪(^∇^*)欢迎回来！</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  //动态标题</span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener(&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        //离开当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;w(ﾟДﾟ)w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout(titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        //返回当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;♪(^∇^*)欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        //两秒后变回正常标题</span><br><span class="line">        titleTime = setTimeout(function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>星穹铁道grub主题</title>
@@ -193,23 +193,6 @@
       <tags>
         <tag>grub</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>主题</title>
-    <url>/undefined/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>css和js代码</title>
-    <url>/59732/</url>
-    <content><![CDATA[<p>内容来自网上</p>
-<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>导航栏居中</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#nav .menus_items &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: fit-content;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>透明度调节</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */</span><br><span class="line">.layout_post&gt;#post &#123;</span><br><span class="line">  /* 以下代表透明度为0.7 可以自行修改*/</span><br><span class="line">  background: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 所有页面背景 */</span><br><span class="line">#aside_content .card-widget, #recent-posts&gt;.recent-post-item, .layout_page&gt;div:first-child:not(.recent-posts), .layout_post&gt;#page, .layout_post&gt;#post, .read-mode .layout_post&gt;#post&#123;</span><br><span class="line">  /* 以下代表透明度为0.7 */</span><br><span class="line">  background: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/*侧边卡片的透明度 */</span><br><span class="line">:root &#123;</span><br><span class="line">--card-bg: rgba(255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 页脚透明 */</span><br><span class="line">#footer &#123;</span><br><span class="line">/* 以下代表透明度为0.7 */</span><br><span class="line">background: rgba(255, 255, 255, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>标签页添加 w(ﾟДﾟ)w 不要走！再看看嘛！，回到本站显示♪(^∇^*)欢迎回来！</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  //动态标题</span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener(&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        //离开当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;w(ﾟДﾟ)w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout(titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        //返回当前页面时标签显示内容</span><br><span class="line">        document.title = &#x27;♪(^∇^*)欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        //两秒后变回正常标题</span><br><span class="line">        titleTime = setTimeout(function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>测试</title>
@@ -235,5 +218,23 @@
     <title>看看烟花吧</title>
     <url>/63552/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/16107/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>
