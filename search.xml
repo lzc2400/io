@@ -1,106 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Markdown 语法速查</title>
-    <url>/3218/</url>
-    <content><![CDATA[<h1 id="Markdown-语法速查"><a href="#Markdown-语法速查" class="headerlink" title="Markdown 语法速查"></a>Markdown 语法速查</h1><p>Markdown 是一种轻量级标记语言，广泛用于文档和博客的撰写。以下是 Markdown 的常用语法速查表，方便查阅和使用。</p>
-<hr>
-<p>Markdown 基本语法：<a href="https://markdown.com.cn/basic-syntax/">https://markdown.com.cn/basic-syntax/</a></p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用 <code>#</code> 号表示不同级别的标题，<code>#</code> 的数量对应标题级别。</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题 </span></span><br><span class="line"><span class="section">## 二级标题 </span></span><br><span class="line"><span class="section">### 三级标题 </span></span><br><span class="line"><span class="section">#### 四级标题 </span></span><br><span class="line"><span class="section">##### 五级标题 </span></span><br><span class="line"><span class="section">###### 六级标题 </span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h2><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><ul>
-<li>斜体文本 *<br><em>斜体文本</em></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_斜体文本_</span><br></pre></td></tr></table></figure>
-<h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>** 粗体文本 **<br><strong>粗体文本</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 粗体文本 **</span><br><span class="line">__粗体文本__</span><br></pre></td></tr></table></figure>
-<h3 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h3><p>** 粗体文本 **<br><strong>粗体文本</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 粗体文本 **</span><br><span class="line">__粗体文本__</span><br></pre></td></tr></table></figure>
-
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr>
-<hr>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">___</span><br></pre></td></tr></table></figure>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>~~ 要删除的文本～～</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~ 要删除的文本～～</span><br></pre></td></tr></table></figure>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul>
-<li>项目一</li>
-<li>项目二<ul>
-<li>子项目</li>
-<li>子项目</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 项目一 </span><br><span class="line">* 项目二 </span><br><span class="line">  - 子项目 </span><br><span class="line">  - 子项目 </span><br></pre></td></tr></table></figure>
-<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><ol>
-<li>项目一</li>
-<li>项目二</li>
-<li>项目三</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 项目一 </span><br><span class="line">2. 项目二 </span><br><span class="line">3. 项目三 </span><br></pre></td></tr></table></figure>
-<h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><ul>
-<li><input disabled="" type="checkbox"> 待办事项 1</li>
-<li><input checked="" disabled="" type="checkbox"> 已完成事项 1</li>
-<li><input disabled="" type="checkbox"> 待办事项 2<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- [ ] 待办事项 1</span><br><span class="line">- [x] 已完成事项 1</span><br><span class="line">- [ ] 待办事项 2</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p>** 粗体 ** 使用 ** 或 __ 包围文字。</p>
-<ul>
-<li>斜体 * 使用 * 或 _ 包围文字。<br>*** 加粗斜体 *** 使用 *** 或 ___ 包围文字。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 这是粗体 **  </span><br><span class="line">* 这是斜体 *  </span><br><span class="line">*** 这是加粗且斜体 ***</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>引用使用 &gt; 符号。</p>
-<blockquote>
-<p>这是一个引用</p>
-<blockquote>
-<p>嵌套的引用</p>
-</blockquote>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 这是一个引用 </span><br><span class="line">&gt;&gt; 嵌套的引用 </span><br></pre></td></tr></table></figure>
-
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p><code>这是` 行内代码 `示例。</code></p>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>使用三个反引号来创建代码块。可以指定语言。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><h2 id="行内链接"><a href="#行内链接" class="headerlink" title="行内链接"></a>行内链接</h2><p><a href="https://www.markdownguide.org/">Markdown 官方文档</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Markdown 官方文档](https://www.markdownguide.org)</span><br></pre></td></tr></table></figure>
-<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p><a href="https://www.google.com/">https://www.google.com</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://www.google.com&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><img src="/akari-1400.png" alt="本地图片"><br><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="网络图片"></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![本地图片](akari-1400.png)</span><br><span class="line">![网络图片](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)</span><br></pre></td></tr></table></figure>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>使用 | 分隔单元格，- 分隔表头和内容。</p>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">内容 1</td>
-<td align="right">内容 2</td>
-<td align="center">内容 3</td>
-</tr>
-<tr>
-<td align="left">内容 4</td>
-<td align="right">内容 5</td>
-<td align="center">内容 6</td>
-</tr>
-</tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :----- | -----: | :------: |</span><br><span class="line">| 内容 1  |   内容 2|  内容 3   |</span><br><span class="line">| 内容 4  |   内容 5|  内容 6   |</span><br></pre></td></tr></table></figure>
-<h1 id="注脚"><a href="#注脚" class="headerlink" title="注脚"></a>注脚</h1><p>这是一段有注脚的文本 <a href="%E8%BF%99%E6%98%AF%E6%B3%A8%E8%84%9A%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%82">^1</a>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> 这是一段有注脚的文本 [^1]。</span><br><span class="line"></span><br><span class="line">[^1]: 这是注脚的内容。</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Butterfly 美化</title>
     <url>/14880/</url>
     <content><![CDATA[<h2 id="生成文章唯一链接"><a href="#生成文章唯一链接" class="headerlink" title="生成文章唯一链接"></a>生成文章唯一链接</h2><p>Hexo 的默认文章链接格式是年，月，日，标题这种格式来生成。<br>如果标题是中文，那 URL 链接就会包含中文。</p>
@@ -267,6 +167,106 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  // 动态标题 </span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener (&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        // 离开当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;w (ﾟДﾟ) w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout (titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        // 返回当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;♪(^∇^*) 欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        // 两秒后变回正常标题 </span><br><span class="line">        titleTime = setTimeout (function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>Markdown 语法速查</title>
+    <url>/3218/</url>
+    <content><![CDATA[<h1 id="Markdown-语法速查"><a href="#Markdown-语法速查" class="headerlink" title="Markdown 语法速查"></a>Markdown 语法速查</h1><p>Markdown 是一种轻量级标记语言，广泛用于文档和博客的撰写。以下是 Markdown 的常用语法速查表，方便查阅和使用。</p>
+<hr>
+<p>Markdown 基本语法：<a href="https://markdown.com.cn/basic-syntax/">https://markdown.com.cn/basic-syntax/</a></p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用 <code>#</code> 号表示不同级别的标题，<code>#</code> 的数量对应标题级别。</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题 </span></span><br><span class="line"><span class="section">## 二级标题 </span></span><br><span class="line"><span class="section">### 三级标题 </span></span><br><span class="line"><span class="section">#### 四级标题 </span></span><br><span class="line"><span class="section">##### 五级标题 </span></span><br><span class="line"><span class="section">###### 六级标题 </span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h2><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><ul>
+<li>斜体文本 *<br><em>斜体文本</em></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_斜体文本_</span><br></pre></td></tr></table></figure>
+<h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>** 粗体文本 **<br><strong>粗体文本</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 粗体文本 **</span><br><span class="line">__粗体文本__</span><br></pre></td></tr></table></figure>
+<h3 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h3><p>** 粗体文本 **<br><strong>粗体文本</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 粗体文本 **</span><br><span class="line">__粗体文本__</span><br></pre></td></tr></table></figure>
+
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr>
+<hr>
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>~~ 要删除的文本～～</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~ 要删除的文本～～</span><br></pre></td></tr></table></figure>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul>
+<li>项目一</li>
+<li>项目二<ul>
+<li>子项目</li>
+<li>子项目</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 项目一 </span><br><span class="line">* 项目二 </span><br><span class="line">  - 子项目 </span><br><span class="line">  - 子项目 </span><br></pre></td></tr></table></figure>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><ol>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 项目一 </span><br><span class="line">2. 项目二 </span><br><span class="line">3. 项目三 </span><br></pre></td></tr></table></figure>
+<h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><ul>
+<li><input disabled="" type="checkbox"> 待办事项 1</li>
+<li><input checked="" disabled="" type="checkbox"> 已完成事项 1</li>
+<li><input disabled="" type="checkbox"> 待办事项 2<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- [ ] 待办事项 1</span><br><span class="line">- [x] 已完成事项 1</span><br><span class="line">- [ ] 待办事项 2</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p>** 粗体 ** 使用 ** 或 __ 包围文字。</p>
+<ul>
+<li>斜体 * 使用 * 或 _ 包围文字。<br>*** 加粗斜体 *** 使用 *** 或 ___ 包围文字。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 这是粗体 **  </span><br><span class="line">* 这是斜体 *  </span><br><span class="line">*** 这是加粗且斜体 ***</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>引用使用 &gt; 符号。</p>
+<blockquote>
+<p>这是一个引用</p>
+<blockquote>
+<p>嵌套的引用</p>
+</blockquote>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 这是一个引用 </span><br><span class="line">&gt;&gt; 嵌套的引用 </span><br></pre></td></tr></table></figure>
+
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p><code>这是` 行内代码 `示例。</code></p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>使用三个反引号来创建代码块。可以指定语言。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><h2 id="行内链接"><a href="#行内链接" class="headerlink" title="行内链接"></a>行内链接</h2><p><a href="https://www.markdownguide.org/">Markdown 官方文档</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Markdown 官方文档](https://www.markdownguide.org)</span><br></pre></td></tr></table></figure>
+<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p><a href="https://www.google.com/">https://www.google.com</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://www.google.com&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><img src="/akari-1400.png" alt="本地图片"><br><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="网络图片"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![本地图片](akari-1400.png)</span><br><span class="line">![网络图片](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)</span><br></pre></td></tr></table></figure>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>使用 | 分隔单元格，- 分隔表头和内容。</p>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">内容 1</td>
+<td align="right">内容 2</td>
+<td align="center">内容 3</td>
+</tr>
+<tr>
+<td align="left">内容 4</td>
+<td align="right">内容 5</td>
+<td align="center">内容 6</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :----- | -----: | :------: |</span><br><span class="line">| 内容 1  |   内容 2|  内容 3   |</span><br><span class="line">| 内容 4  |   内容 5|  内容 6   |</span><br></pre></td></tr></table></figure>
+<h1 id="注脚"><a href="#注脚" class="headerlink" title="注脚"></a>注脚</h1><p>这是一段有注脚的文本 <a href="%E8%BF%99%E6%98%AF%E6%B3%A8%E8%84%9A%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%82">^1</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> 这是一段有注脚的文本 [^1]。</span><br><span class="line"></span><br><span class="line">[^1]: 这是注脚的内容。</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ipv6 搭建 alist 并使用域名绑定</title>
     <url>/56572/</url>
     <content><![CDATA[<h1 id="ipv6-搭建-alist-并使用域名绑定"><a href="#ipv6-搭建-alist-并使用域名绑定" class="headerlink" title="ipv6 搭建 alist 并使用域名绑定"></a>ipv6 搭建 alist 并使用域名绑定</h1><h2 id="1-光猫桥接、路由器设置-pppoe-拨号"><a href="#1-光猫桥接、路由器设置-pppoe-拨号" class="headerlink" title="1. 光猫桥接、路由器设置 pppoe 拨号"></a>1. 光猫桥接、路由器设置 pppoe 拨号</h2><p>先按照此教程设置</p>
@@ -329,6 +329,15 @@
       </tags>
   </entry>
   <entry>
+    <title>添加自定义 css 和 js 文件</title>
+    <url>/45104/</url>
+    <content><![CDATA[<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>如果想魔改和美化，添加自定义文件是不可避免的。下面来详细说一下 css 和 js 文件的创建和引入，其他文件同理。<br>我们找到博客根目录下的 source 文件夹（主题的 source 虽然也可以，但是不推荐）<br>在里面创建 js 和 css 文件夹，也可以创建其他文件夹，例如存放图片的 img 文件夹，存放字体的 font 文件夹等等。</p>
+<h2 id="引入文件"><a href="#引入文件" class="headerlink" title="引入文件"></a>引入文件</h2><p>在主题配置文件（_config.butterfly.yml）里面的 inject 引入（不知道这个文件的去看文档）<br>css 文件一般在 head 引入，js 文件一般在 bottom 里引入，特殊情况除外。<br>例如引入 css 文件夹里面的 style.css 和 js 文件夹里面的 script.js，可以这样写:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">    # 自定义 css</span><br><span class="line">    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css?1&quot;&gt;</span><br><span class="line">    # 静态文件后面加个？任意内容  可以在每次更新之后用户自动重新请求.</span><br><span class="line">    # 例如添加？1 , 在修改此文件后改成？2 , 用户访问你的网站时，不会使用本地的缓存，而是请求新的内容。没修改的话就不用动。</span><br><span class="line">  bottom:</span><br><span class="line">    # 自定义 js</span><br><span class="line">    - &lt;script src=&quot;/js/script.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    # 引入多个文件就直接往下复制一行改一下文件名即可，如下：</span><br><span class="line">    - &lt;script src=&quot;/js/script1.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    - &lt;script src=&quot;/js/script2.js?1&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：路径最前面是斜杠，而不是点斜杠，即 &#x2F;xx&#x2F;xxx.js，而不是.&#x2F;xx&#x2F;xxx.js。<br>参考链接：<a href="https://blog.leonus.cn/2022/custom.html">https://blog.leonus.cn/2022/custom.html</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>测试</title>
     <url>/37773/</url>
     <content><![CDATA[<p>你的文章内容</p>
@@ -338,15 +347,6 @@
         <tag>测试</tag>
         <tag>分享</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>添加自定义 css 和 js 文件</title>
-    <url>/45104/</url>
-    <content><![CDATA[<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>如果想魔改和美化，添加自定义文件是不可避免的。下面来详细说一下 css 和 js 文件的创建和引入，其他文件同理。<br>我们找到博客根目录下的 source 文件夹（主题的 source 虽然也可以，但是不推荐）<br>在里面创建 js 和 css 文件夹，也可以创建其他文件夹，例如存放图片的 img 文件夹，存放字体的 font 文件夹等等。</p>
-<h2 id="引入文件"><a href="#引入文件" class="headerlink" title="引入文件"></a>引入文件</h2><p>在主题配置文件（_config.butterfly.yml）里面的 inject 引入（不知道这个文件的去看文档）<br>css 文件一般在 head 引入，js 文件一般在 bottom 里引入，特殊情况除外。<br>例如引入 css 文件夹里面的 style.css 和 js 文件夹里面的 script.js，可以这样写:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">    # 自定义 css</span><br><span class="line">    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css?1&quot;&gt;</span><br><span class="line">    # 静态文件后面加个？任意内容  可以在每次更新之后用户自动重新请求.</span><br><span class="line">    # 例如添加？1 , 在修改此文件后改成？2 , 用户访问你的网站时，不会使用本地的缓存，而是请求新的内容。没修改的话就不用动。</span><br><span class="line">  bottom:</span><br><span class="line">    # 自定义 js</span><br><span class="line">    - &lt;script src=&quot;/js/script.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    # 引入多个文件就直接往下复制一行改一下文件名即可，如下：</span><br><span class="line">    - &lt;script src=&quot;/js/script1.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    - &lt;script src=&quot;/js/script2.js?1&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>注意：路径最前面是斜杠，而不是点斜杠，即 &#x2F;xx&#x2F;xxx.js，而不是.&#x2F;xx&#x2F;xxx.js。<br>参考链接：<a href="https://blog.leonus.cn/2022/custom.html">https://blog.leonus.cn/2022/custom.html</a></p>
-]]></content>
   </entry>
   <entry>
     <title>看看烟花吧</title>
