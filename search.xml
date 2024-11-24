@@ -1,494 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Butterfly 美化</title>
-    <url>/14880/</url>
-    <content><![CDATA[<h2 id="生成文章唯一链接"><a href="#生成文章唯一链接" class="headerlink" title="生成文章唯一链接"></a>生成文章唯一链接</h2><p>Hexo 的默认文章链接格式是年，月，日，标题这种格式来生成。<br>如果标题是中文，那 URL 链接就会包含中文。</p>
-<p>1、安装插件，在博客根目录打开终端，运行以下指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-
-<p>2、插件安装成功后，在根目录的配置文件 _config.yml 找到 permalink：<br>修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">permalink: :abbrlink/</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc16      #support crc16 (default) and crc32</span><br><span class="line">  rep: dec        #support dec (default) and hex</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="顶部图"><a href="#顶部图" class="headerlink" title="顶部图"></a>顶部图</h2><table>
-<thead>
-<tr>
-<th>配置</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>index_img</td>
-<td>主页的 top_img</td>
-</tr>
-<tr>
-<td>default_top_img</td>
-<td>默认的 top_img，当页面的 top_img 没有配置时，会显示 default_top_img</td>
-</tr>
-<tr>
-<td>archive_img</td>
-<td>归档页面的 top_img</td>
-</tr>
-<tr>
-<td>tag_img</td>
-<td>tag 子页面 的 默认 top_img</td>
-</tr>
-<tr>
-<td>tag_per_img</td>
-<td>tag 子页面的 top_img，可配置每个 tag 的 top_img</td>
-</tr>
-<tr>
-<td>category_img</td>
-<td>category 子页面 的 默认 top_img</td>
-</tr>
-<tr>
-<td>category_per_img</td>
-<td>category 子页面的 top_img，可配置每个 category 的 top_img</td>
-</tr>
-</tbody></table>
-<p>其它页面 （tags&#x2F;categories&#x2F; 自建页面）和文章页的 top_img ，请到对应的 md 页面设置 front-matter 中的 top_img</p>
-<p>tag_per_img 和 category_per_img 是 3.2.0 新增的内容，可对 tag 和 category 进行单独的配置</p>
-<p>并不推荐为每个 tag 和每个 category 都配置不同的顶部图，因为配置太多会拖慢生成速度</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tag_per_img：</span><br><span class="line">  aplayer: https://xxxxxx.png</span><br><span class="line">  android: ddddddd.png</span><br><span class="line"></span><br><span class="line">category_per_img：</span><br><span class="line">  随想: hdhdh.png</span><br><span class="line">  推荐: ddjdjdjd.png</span><br></pre></td></tr></table></figure>
-
-<h2 id="footer-背景"><a href="#footer-背景" class="headerlink" title="footer 背景"></a>footer 背景</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># footer 是否显示图片背景 (与 top_img 一致)</span><br><span class="line">footer_bg: true</span><br></pre></td></tr></table></figure>
-<h2 id="网站副标题"><a href="#网站副标题" class="headerlink" title="网站副标题"></a>网站副标题</h2><p>可设置主页中展示的网站副标题或者自己喜欢的座右铭</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source: 1</span><br><span class="line"># If you close the typewriter effect, the subtitle will only show the first line of sub</span><br><span class="line">sub:</span><br><span class="line">  - 你好啊！(´◊ω◊｀) </span><br></pre></td></tr></table></figure>
-<h2 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h2><p>可自行决定哪个项目需要显示，可决定位置，也可以设置不显示侧边栏。<br>在 Aside Settings 中设置</p>
-<h2 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h2><p>根目录执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-wordcount —save or yarn add hexo-wordcount</span><br></pre></td></tr></table></figure>
-<p>主题配置 wordcount:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wordcount:</span><br><span class="line">  enable: true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure>
-<h2 id="动态标题"><a href="#动态标题" class="headerlink" title="动态标题"></a>动态标题</h2><p>  标签页显示 w (ﾟДﾟ) w 不要走！再看看嘛！，回到本站显示♪(^∇^*) 欢迎回来！<br>  在自定义 JS 中加入以下代码：<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  // 动态标题 </span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener (&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        // 离开当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;w (ﾟДﾟ) w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout (titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        // 返回当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;♪(^∇^*) 欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        // 两秒后变回正常标题 </span><br><span class="line">        titleTime = setTimeout (function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>美化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown 语法速查</title>
-    <url>/3218/</url>
-    <content><![CDATA[<h1 id="Markdown-语法速查"><a href="#Markdown-语法速查" class="headerlink" title="Markdown 语法速查"></a>Markdown 语法速查</h1><p>Markdown 是一种轻量级标记语言，广泛用于文档和博客的撰写。以下是 Markdown 的常用语法速查表，方便查阅和使用。</p>
-<hr>
-<p>Markdown 基本语法：<a href="https://markdown.com.cn/basic-syntax/">https://markdown.com.cn/basic-syntax/</a></p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用 <code>#</code> 号表示不同级别的标题，<code>#</code> 的数量对应标题级别。</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题 </span></span><br><span class="line"><span class="section">## 二级标题 </span></span><br><span class="line"><span class="section">### 三级标题 </span></span><br><span class="line"><span class="section">#### 四级标题 </span></span><br><span class="line"><span class="section">##### 五级标题 </span></span><br><span class="line"><span class="section">###### 六级标题 </span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h2><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><ul>
-<li>斜体文本 *<br><em>斜体文本</em></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_斜体文本_</span><br></pre></td></tr></table></figure>
-<h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>** 粗体文本 **<br><strong>粗体文本</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 粗体文本 **</span><br><span class="line">__粗体文本__</span><br></pre></td></tr></table></figure>
-<h3 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h3><p>** 粗体文本 **<br><strong>粗体文本</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 粗体文本 **</span><br><span class="line">__粗体文本__</span><br></pre></td></tr></table></figure>
-
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr>
-<hr>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">___</span><br></pre></td></tr></table></figure>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>~~ 要删除的文本～～</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~ 要删除的文本～～</span><br></pre></td></tr></table></figure>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul>
-<li>项目一</li>
-<li>项目二<ul>
-<li>子项目</li>
-<li>子项目</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 项目一 </span><br><span class="line">* 项目二 </span><br><span class="line">  - 子项目 </span><br><span class="line">  - 子项目 </span><br></pre></td></tr></table></figure>
-<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><ol>
-<li>项目一</li>
-<li>项目二</li>
-<li>项目三</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 项目一 </span><br><span class="line">2. 项目二 </span><br><span class="line">3. 项目三 </span><br></pre></td></tr></table></figure>
-<h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><ul>
-<li><input disabled="" type="checkbox"> 待办事项 1</li>
-<li><input checked="" disabled="" type="checkbox"> 已完成事项 1</li>
-<li><input disabled="" type="checkbox"> 待办事项 2<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- [ ] 待办事项 1</span><br><span class="line">- [x] 已完成事项 1</span><br><span class="line">- [ ] 待办事项 2</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p>** 粗体 ** 使用 ** 或 __ 包围文字。</p>
-<ul>
-<li>斜体 * 使用 * 或 _ 包围文字。<br>*** 加粗斜体 *** 使用 *** 或 ___ 包围文字。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** 这是粗体 **  </span><br><span class="line">* 这是斜体 *  </span><br><span class="line">*** 这是加粗且斜体 ***</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>引用使用 &gt; 符号。</p>
-<blockquote>
-<p>这是一个引用</p>
-<blockquote>
-<p>嵌套的引用</p>
-</blockquote>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 这是一个引用 </span><br><span class="line">&gt;&gt; 嵌套的引用 </span><br></pre></td></tr></table></figure>
-
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p><code>这是` 行内代码 `示例。</code></p>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>使用三个反引号来创建代码块。可以指定语言。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><h2 id="行内链接"><a href="#行内链接" class="headerlink" title="行内链接"></a>行内链接</h2><p><a href="https://www.markdownguide.org/">Markdown 官方文档</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Markdown 官方文档](https://www.markdownguide.org)</span><br></pre></td></tr></table></figure>
-<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p><a href="https://www.google.com/">https://www.google.com</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://www.google.com&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><img src="/akari-1400.png" alt="本地图片"><br><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="网络图片"></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![本地图片](akari-1400.png)</span><br><span class="line">![网络图片](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)</span><br></pre></td></tr></table></figure>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>使用 | 分隔单元格，- 分隔表头和内容。</p>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">内容 1</td>
-<td align="right">内容 2</td>
-<td align="center">内容 3</td>
-</tr>
-<tr>
-<td align="left">内容 4</td>
-<td align="right">内容 5</td>
-<td align="center">内容 6</td>
-</tr>
-</tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :----- | -----: | :------: |</span><br><span class="line">| 内容 1  |   内容 2|  内容 3   |</span><br><span class="line">| 内容 4  |   内容 5|  内容 6   |</span><br></pre></td></tr></table></figure>
-<h1 id="注脚"><a href="#注脚" class="headerlink" title="注脚"></a>注脚</h1><p>这是一段有注脚的文本 <a href="%E8%BF%99%E6%98%AF%E6%B3%A8%E8%84%9A%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%82">^1</a>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> 这是一段有注脚的文本 [^1]。</span><br><span class="line"></span><br><span class="line">[^1]: 这是注脚的内容。</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>alist ipv6 反向代理</title>
-    <url>/61951/</url>
-    <content><![CDATA[<h1 id="alist-ipv6-反向代理"><a href="#alist-ipv6-反向代理" class="headerlink" title="alist ipv6 反向代理"></a>alist ipv6 反向代理</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载 nginx：<a href="https://nginx.org/cn/">https://nginx.org/cn/</a></p>
-<p>进去我们下载稳定版本</p>
-<p><img src="/images/alistipv6/0.png" alt="image.png"></p>
-<h2 id="解压运行"><a href="#解压运行" class="headerlink" title="解压运行"></a>解压运行</h2><p><img src="/images/alistipv6/1.png" alt="image.png"></p>
-<ul>
-<li>文件说明<ul>
-<li>conf：存在 Nginx 配置文件的目录</li>
-<li>docs：存放 Nginx 文档的目录</li>
-<li>html：存放静态 html 文件的目录</li>
-<li>logs：存放 Nginx 日志的目录</li>
-<li>temp：存放临时文件的目录</li>
-</ul>
-</li>
-</ul>
-<h2 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h2><p>** 解压后，使用命令进行操作，不要直接双击 nginx.exe**</p>
-<ul>
-<li>一定要在 dos 窗口启动，不要直接双击 nginx.exe，这样会导致修改配置后重启、停止 nginx 无效，需要手动关闭任务管理器内的所有 nginx 进程，再启动才可以</li>
-</ul>
-<p>在文件目录右键在终端中打开</p>
-<p><img src="/images/alistipv6/2.png" alt="image.png"></p>
-<p>启动 nginx 服务，启动时会一闪而过是正常的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">start nginx</span><br></pre></td></tr></table></figure>
-<p>浏览器访问 <a href="http://127.0.0.1/">http://127.0.0.1/</a><br><img src="/images/alistipv6/3.png" alt="image.png"></p>
-<p>这样就是成功的访问，</p>
-<ul>
-<li>常见的错误：</li>
-<li>(1) 端口号被占用</li>
-<li>(2) nginx 文件夹路径含中文</li>
-<li>其他错误就详细看 log 中的描述</li>
-</ul>
-<h2 id="转发端口"><a href="#转发端口" class="headerlink" title="转发端口"></a>转发端口</h2><p>修改 nginx 配置文件，路径在 “nginx-1.26.2\conf\nginx.conf”</p>
-<p>在 server 块中添加 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">listen       80;</span><br></pre></td></tr></table></figure>
-
-<p>这样 Nginx 会同时监听 IPv4 和 IPv6 请求</p>
-<p><code>server_name     localhost;</code> 这个 localhost 修改为你的 <code>域名</code> 例如 xxx.com</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">listen       80;          # 监听 IPv4</span><br><span class="line">listen       [::]:80;     # 监听 IPv6</span><br><span class="line">server_name    localhost; #这里修改为你的域名 </span><br></pre></td></tr></table></figure>
-
-<p>在 <code>location</code> 块中添加</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">proxy_pass  <span class="attr">http</span>:<span class="comment">//127.0.0.1:5244/; # 代理转发到本地服务 </span></span><br><span class="line"></span><br><span class="line"># 保持主机名一致 </span><br><span class="line">proxy_set_header <span class="title class_">Host</span> $host;</span><br><span class="line">proxy_set_header X-<span class="title class_">Real</span>-<span class="variable constant_">IP</span> $remote_addr;</span><br><span class="line">proxy_set_header X-<span class="title class_">Forwarded</span>-<span class="title class_">For</span> $proxy_add_x_forwarded_for;</span><br><span class="line">proxy_set_header X-<span class="title class_">Forwarded</span>-<span class="title class_">Proto</span> $scheme;</span><br><span class="line"></span><br><span class="line"># 支持 <span class="title class_">WebSocket</span> 或长连接的升级头 </span><br><span class="line">proxy_http_version <span class="number">1.1</span>;</span><br><span class="line">proxy_set_header <span class="title class_">Upgrade</span> $http_upgrade;</span><br><span class="line">proxy_set_header <span class="title class_">Connection</span> <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line"></span><br><span class="line"># 确保大文件传输 </span><br><span class="line">proxy_buffering off;</span><br><span class="line">proxy_request_buffering off;</span><br><span class="line"></span><br><span class="line"># 确保返回正确的文件流 </span><br><span class="line">proxy_set_header <span class="title class_">Range</span> $http_range;</span><br><span class="line">proxy_set_header <span class="title class_">If</span>-<span class="title class_">Range</span> $http_if_range;</span><br></pre></td></tr></table></figure>
-
-<p>如图</p>
-<p><img src="/images/alistipv6/4.png" alt="image.png"></p>
-<p>提示</p>
-<p><code>root</code> 和 <code>index</code>**：在 <code>location /</code> 块中，去掉 <code>root</code> 和 <code>index</code> 的配置，因为这些通常不需要在代理设置中指定。如果你的应用需要这些，可以单独设置一个新的 <code>location</code>。</p>
-<ul>
-<li>如果程序没启动就直接 start nginx 启动，如果已经启动了就使用以下命令重新加载配置文件并重启</li>
-</ul>
-<p><code>nginx -s reload</code></p>
-<ul>
-<li>关闭 nginx 服务使用以下命令，同样也是一闪而过是正常的，看一下是否进程已消失即可快速停止</li>
-</ul>
-<p><code>nginx -s stop</code></p>
-<ul>
-<li>完整有序的关闭</li>
-</ul>
-<p><code>nginx -s quit</code></p>
-<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><ul>
-<li>我们可以不用通过域名后面加端口号访问</li>
-</ul>
-<p>参考链接：<a href="https://www.cnblogs.com/dream-ze/p/17663199.html">https://www.cnblogs.com/dream-ze/p/17663199.html</a></p>
-<p>如果无法访问请检查：</p>
-<ul>
-<li>检查路由器设置：确保路由器也支持 IPv6，并且已经设置了适当的转发。</li>
-<li>防火墙设置：确保防火墙允许通过 IPv6 访问 80 端口。</li>
-<li>测试：在手机上使用 <code>http://[你的 IPv6 地址]</code> 进行访问。</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/16107/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>css 和 js 代码</title>
-    <url>/59732/</url>
-    <content><![CDATA[<p>内容来自网上</p>
-<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>导航栏居中</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#nav .menus_items &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: fit-content;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX (-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>透明度调节</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */</span><br><span class="line">.layout_post&gt;#post &#123;</span><br><span class="line">  /* 以下代表透明度为 0.7 可以自行修改 */</span><br><span class="line">  background: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 所有页面背景 */</span><br><span class="line">#aside_content .card-widget, #recent-posts&gt;.recent-post-item, .layout_page&gt;div:first-child:not (.recent-posts), .layout_post&gt;#page, .layout_post&gt;#post, .read-mode .layout_post&gt;#post&#123;</span><br><span class="line">  /* 以下代表透明度为 0.7 */</span><br><span class="line">  background: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 侧边卡片的透明度 */</span><br><span class="line">:root &#123;</span><br><span class="line">--card-bg: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 页脚透明 */</span><br><span class="line">#footer &#123;</span><br><span class="line">/* 以下代表透明度为 0.7 */</span><br><span class="line">background: rgba (255, 255, 255, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>标签页添加 w (ﾟДﾟ) w 不要走！再看看嘛！，回到本站显示♪(^∇^*) 欢迎回来！</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  // 动态标题 </span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener (&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        // 离开当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;w (ﾟДﾟ) w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout (titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        // 返回当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;♪(^∇^*) 欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        // 两秒后变回正常标题 </span><br><span class="line">        titleTime = setTimeout (function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>ipv6 搭建 alist 并使用域名绑定</title>
-    <url>/56572/</url>
-    <content><![CDATA[<h1 id="ipv6-搭建-alist-并使用域名绑定"><a href="#ipv6-搭建-alist-并使用域名绑定" class="headerlink" title="ipv6 搭建 alist 并使用域名绑定"></a>ipv6 搭建 alist 并使用域名绑定</h1><h2 id="1-光猫桥接、路由器设置-pppoe-拨号"><a href="#1-光猫桥接、路由器设置-pppoe-拨号" class="headerlink" title="1. 光猫桥接、路由器设置 pppoe 拨号"></a>1. 光猫桥接、路由器设置 pppoe 拨号</h2><p>先按照此教程设置</p>
-<p>电信：<a href="https://ipw.cn/doc/ipv6/user/enable_ipv6.html">个人宽带如何开启 IPv6 网络访问 | IP 查询 (ipw.cn)</a></p>
-<p>移动：<a href="https://post.smzdm.com/p/a30eo9vr/">https://post.smzdm.com/p/a30eo9vr/</a> </p>
-<p>ipv6 测试网站地址：<a href="http://test-ipv6.com/">test-ipv6.com</a></p>
-<p>光猫配置完毕之后，在路由器中开启 ipv6 功能</p>
-<p>检查 ipv6</p>
-<p><img src="/images/20241020181528.png"></p>
-<p>** 终端 ** 输入 <code>ipconfig</code> 或者 <code>curl  test.ipw.cn</code> 查看 <strong>ip</strong></p>
-<blockquote>
-<p>移动 ipv6 是 2409 开头的。<br>电信 ipv6 是 240e 开头的<br>联通 ipv6 是 2408 开头的。</p>
-</blockquote>
-<h2 id="2、配置-Alist"><a href="#2、配置-Alist" class="headerlink" title="2、配置 Alist"></a>2、配置 Alist</h2><p>参考该视频进行配置： <a href="https://www.bilibili.com/video/BV1384y1K7js/?share_source=copy_web&;vd_source=be289850c5c5594f40d7931ca1122b8b">https://www.bilibili.com/video/BV1384y1K7js/?share_source&#x3D;copy_web&amp;;vd_source&#x3D;be289850c5c5594f40d7931ca1122b8b</a> </p>
-<p>配置好后浏览器输入 <a href="http://127.0.0.1:5244/">http://127.0.0.1:5244/</a> 访问</p>
-<h2 id="3-外网访问"><a href="#3-外网访问" class="headerlink" title="3. 外网访问"></a>3. 外网访问</h2><p>在路由器配置 ** 端口转发 ** 或者 <strong>DMZ</strong></p>
-<p>然后关闭 <strong>WIFI</strong> 打开手机的数据</p>
-<p>访问你的 alist</p>
-<p><code>[你的 ipv6 地址]:5244</code></p>
-<p>这样就完成了外网访问</p>
-<p>若是访问失败，检查光猫或路由器的 **IPv6 防火墙 ** 配置是否正确</p>
-<p>但是 ** 公网 **IPv6 地址每隔一段时间或者重启路由器就会发生变化，变化之后就 ** 无法访问 ** 了</p>
-<p>这个时候就要使用 ddns 工具，实时的将我们的 IPv6 地址解析到域名，然后我们直接访问域名就好</p>
-<h2 id="4-DDNS-绑定-IPv6"><a href="#4-DDNS-绑定-IPv6" class="headerlink" title="4.DDNS 绑定 IPv6"></a><strong>4.DDNS 绑定 IPv6</strong></h2><p>首先需要有一个自己的域名，免费的域名挺多，但是会有一些限制，不介意的可以自己去申请，只要能够使用 <strong>cloudflare</strong> 等 DNS 商即可</p>
-<p>或者在阿里云、腾讯云、新网、万网这些平台购买一个域名，价格也不贵，最便宜的也才几块钱一年，如果域名有备案的话，默认网页端口 80，443 随便使用；** 如果没有备案，请不要使用上述两个端口！**</p>
-<p>下面以托管在 <strong>cloudflare</strong> 的域名为例：</p>
-<p>进入 <strong>cloudflare API</strong> 令牌配置页面</p>
-<p><img src="/images/alist1.png" alt="image.png"></p>
-<p>点创建令牌，选择 ** 编辑区域 DNS<strong>，点继续，将 ** 令牌 ** 复制好（</strong> 注意！令牌只显示一次 **）</p>
-<p>下载 ddns-go，ddns-go 地址:<a href="https://github.com/jeessy2/ddns-go">https://github.com/jeessy2/ddns-go</a>，下载好后解压打开文件夹，在文件根目录打开终端输入.\ddns-go.exe 运行</p>
-<p>然后浏览器访问 <a href="http://127.0.0.1:9876/">http://127.0.0.1:9876/</a></p>
-<p>一般默认的端口是 9876</p>
-<p><img src="/images/alist2.png" alt="image.png"></p>
-<p>dns 服务商选择 Cloudflare，Token 填写你刚刚复制好的令牌，TTL 自动就好</p>
-<p>下滑找到 ipv6 并打钩，获取 IP 方式选择网卡或者接口，Domains 里面输入你的域名地址</p>
-<p>保存。</p>
-<p>域名解析需要一定时间生效，需要等一段时间才能访问</p>
-<p>访问输入：域名：5244 就可以了</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>主题</title>
-    <url>/undefined/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>星穹铁道 grub 主题</title>
-    <url>/14870/</url>
-    <content><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">GRUB 主题</a><br><a href="https://github.com/voidlhf/StarRailGrubThemes">github 地址</a></p>
-<h3 id="以-Firefly-cn-为例"><a href="#以-Firefly-cn-为例" class="headerlink" title="以 Firefly_cn 为例"></a>以 Firefly_cn 为例</h3><p><img src="/res/img/post/Firefly_cn.png"><br>下载 Firefly 压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
-<h3 id="编辑-grub-文件"><a href="#编辑-grub-文件" class="headerlink" title="编辑 grub 文件"></a>编辑 grub 文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
-<p>文本底部添加主题<br>按 i 进入进入编辑模式<br>esc 退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="更新-grub"><a href="#更新-grub" class="headerlink" title="更新 grub"></a>更新 grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-
-<h3 id="至此大功告成，重启电脑！"><a href="#至此大功告成，重启电脑！" class="headerlink" title="至此大功告成，重启电脑！"></a>至此大功告成，重启电脑！</h3>]]></content>
-      <tags>
-        <tag>grub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/37773/</url>
-    <content><![CDATA[<p>你的文章内容</p>
-<p><img src="/images/wt.jpg" alt="(可以写关于图片的描述)"></p>
-]]></content>
-      <tags>
-        <tag>测试</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>添加自定义 css 和 js 文件</title>
-    <url>/45104/</url>
-    <content><![CDATA[<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>如果想魔改和美化，添加自定义文件是不可避免的。下面来详细说一下 css 和 js 文件的创建和引入，其他文件同理。<br>我们找到博客根目录下的 source 文件夹（主题的 source 虽然也可以，但是不推荐）<br>在里面创建 js 和 css 文件夹，也可以创建其他文件夹，例如存放图片的 img 文件夹，存放字体的 font 文件夹等等。</p>
-<h2 id="引入文件"><a href="#引入文件" class="headerlink" title="引入文件"></a>引入文件</h2><p>在主题配置文件（_config.butterfly.yml）里面的 inject 引入（不知道这个文件的去看文档）<br>css 文件一般在 head 引入，js 文件一般在 bottom 里引入，特殊情况除外。<br>例如引入 css 文件夹里面的 style.css 和 js 文件夹里面的 script.js，可以这样写:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">    # 自定义 css</span><br><span class="line">    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css?1&quot;&gt;</span><br><span class="line">    # 静态文件后面加个？任意内容  可以在每次更新之后用户自动重新请求.</span><br><span class="line">    # 例如添加？1 , 在修改此文件后改成？2 , 用户访问你的网站时，不会使用本地的缓存，而是请求新的内容。没修改的话就不用动。</span><br><span class="line">  bottom:</span><br><span class="line">    # 自定义 js</span><br><span class="line">    - &lt;script src=&quot;/js/script.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    # 引入多个文件就直接往下复制一行改一下文件名即可，如下：</span><br><span class="line">    - &lt;script src=&quot;/js/script1.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    - &lt;script src=&quot;/js/script2.js?1&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>注意：路径最前面是斜杠，而不是点斜杠，即 &#x2F;xx&#x2F;xxx.js，而不是.&#x2F;xx&#x2F;xxx.js。<br>参考链接：<a href="https://blog.leonus.cn/2022/custom.html">https://blog.leonus.cn/2022/custom.html</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>看看烟花吧</title>
-    <url>/63552/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>破解电信天翼网关超级管理员密码</title>
-    <url>/50479/</url>
-    <content><![CDATA[<h1 id="破解电信天翼网关超级管理员密码"><a href="#破解电信天翼网关超级管理员密码" class="headerlink" title="破解电信天翼网关超级管理员密码"></a>破解电信天翼网关超级管理员密码</h1><h3 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h3><p>地址：广东</p>
-<p>运营商：电信</p>
-<p>设备类型：XG-PON 天翼网关</p>
-<p>光猫型号：UNG-EHD4  </p>
-<hr>
-<p>我们先要知道光猫后背的账号密码</p>
-<p>然后下载 flashfxp，打开点右上角的会话 - 快速连接</p>
-<p><img src="/images/0.png"></p>
-<p>打开后填入地址 192.168.1.1，用户名跟密码就填写光猫后面的</p>
-<p><img src="/images/1.png" alt="image.png"></p>
-<p>进去之后到文件根目录找到 boaroot 点进去有个叫 romfile.cfg 的文件把他下载到我们的电脑</p>
-<p>路径在 &#x2F;boaroot&#x2F;html&#x2F;romfile 1.cfg</p>
-<p><img src="/images/2.png" alt="image.png"></p>
-<p><img src="/images/3.png" alt="image.png"></p>
-<p>传输到电脑之后右键查看，可以用记事本或者其他编辑器打开</p>
-<p>我这里使用 VS code 打开，打开后 ctrl+f 搜索 telecomadmin，后面就是超级密码</p>
-<p>登陆使用 telecomadmin 加超级密码登陆</p>
-<p><img src="/images/4.png" alt="image.png"></p>
-<p>还有搜索 password，宽带账号密码也在里面</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>记录一次配置 SSL</title>
-    <url>/14434/</url>
-    <content><![CDATA[<ol>
-<li>** 下载 win-acme**：<ul>
-<li>访问 <a href="https://www.win-acme.com/">win-acme 官网</a> 下载最新版本。</li>
-</ul>
-</li>
-<li>** 解压并运行 **：<ul>
-<li>解压下载的文件，双击 <code>wacs.exe</code>。</li>
-</ul>
-</li>
-<li>** 选择选项 **：<ul>
-<li>选择 <code>N</code> 创建新的证书，并按提示输入你的域名。</li>
-</ul>
-</li>
-<li>** 验证域名 **：<ul>
-<li>根据提示选择验证方法（如 HTTP 或 DNS 验证）。</li>
-</ul>
-</li>
-<li>** 安装证书 **：<ul>
-<li>验证成功后，win-acme 会自动为你生成并安装证书。</li>
-</ul>
-</li>
-<li>** 定期续订 **：<ul>
-<li>你可以设置任务计划，以便定期自动续订证书。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<p>双击 <code>wacs.exe</code>，输入 <code>N</code> 开始。</p>
-<p><img src="/images/ssl/0.png" alt="image.png"> 选择:<code>2</code>，然后输入 <code>域名</code></p>
-<p><img src="/images/ssl/1.png" alt="image.png"> ACME 服务器需要验证您是否是申请证书的域名的所有者。这在初始设置和每次未来续订时都会发生。有两种主要方法可以做到这一点：回答特定的 http 请求 (http-01) 或创建特定的 dns 记录 (dns-01)。对于通配符标识符，后者是唯一的选择。</p>
-<p>可以从 <a href="https://github.com/win-acme/win-acme/">https://github.com/win-acme/win-acme/</a> 获取各种附加插件。</p>
-<p>1：[http] 将验证文件保存在（网络）路径上<br>2：[http] 从内存提供验证文件<br>3：[http] 通过 FTP (S) 上传验证文件<br>4：[http] 通过 SSH-FTP 上传验证文件<br>5：[http] 通过 WebDav 上传验证文件<br>6：[dns] 手动创建验证记录（无法自动续订）<br>7：[dns] 使用 acme-dns 创建验证记录（<a href="https://github.com/joohoi/acme-dns%EF%BC%89">https://github.com/joohoi/acme-dns）</a><br>8：[dns] 使用您自己的脚本创建验证记录<br>9：[tls-alpn] 回答来自 win-acme 的 TLS 验证请求<br>C：中止</p>
-<p>您希望如何证明对域的所有权？：</p>
-<p>选择:<code>6</code></p>
-<p><img src="/images/ssl/2.png" alt="image.png"> </p>
-<p>存储插件证书存储不可用：以管理员身份运行以允许证书存储访问。</p>
-<p>当我们拥有证书时，您可以通过一种或多种方式进行存储，以便您的应用程序可以访问它。Windows 证书存储是 IIS 的默认位置（除非您正在管理它们的集群）。</p>
-<p>1：IIS 中央证书存储（每个主机的 .pfx）<br>2：PEM 编码文件（Apache、nginx 等）<br>3：PFX 存档<br>4：Windows 证书存储（本地计算机）<br>5：无（其他）存储步骤</p>
-<p>您希望如何存储证书？：</p>
-<p>选择:<code>2</code></p>
-<p>File path: 输入存放证书的路径</p>
-<p><img src="/images/ssl/3.png" alt="image.png"> 描述：为私钥 .pem 文件设置的密码。</p>
-<p>1：无<br>2：在控制台中输入 &#x2F; 粘贴<br>3：在保管库中搜索</p>
-<p>从菜单中选择：</p>
-<p>选择：<code>1</code></p>
-<p>gpt：设置密码可以增加安全性，防止未授权访问您的私钥。如果私钥被泄露，设置密码可以防止其被恶意使用。不过，这意味着每次使用证书时，您需要输入密码，这可能会稍显麻烦。选择不设置密码可以简化使用流程，但会降低安全性。选择哪种方式取决于您的需求和环境安全性。</p>
-<p><img src="/images/ssl/4.png" alt="image.png"> 安装插件 IIS 不可用：以管理员身份运行以允许访问 IIS。</p>
-<p>将证书保存到您选择的存储区后，您可以选择一个或多个步骤来更新应用程序，例如配置新的指纹或更新绑定。</p>
-<p>1：在 IIS 中创建或更新绑定<br>2：启动外部脚本或程序<br>3：无（其他）安装步骤</p>
-<p>应首先运行哪个安装步骤？：</p>
-<p>选择：<code>3</code></p>
-<p>gpt：这是一个步骤，旨在帮助您在安装完 SSL 证书后，选择是否对其他应用程序（如 IIS）进行额外配置。如果您使用的是 Nginx，则可以选择不执行额外的安装步骤。这样就可以直接使用已生成的证书。</p>
-<p><img src="/images/ssl/5.png" alt="image.png"> 选择：<code>y</code></p>
-<p><img src="/images/ssl/6.png" alt="image.png"> 添加 dns 记录，选择 txt，如图：<br><img src="/images/ssl/7.png" alt="image.png"><br>Please press <Enter> after you’ve created and verified the record</p>
-<p>创建并 <code>验证</code> 记录后，请按 <code>Enter</code> 键</p>
-<p>ps：<code>可能需要等一段时间才生效</code></p>
-<p>N：创建证书（默认设置）<br>M：创建证书（完整选项）<br>R：运行续订（当前有 0 个到期）<br>A：管理续订（共 1 个）<br>O：更多选项…<br>Q：退出</p>
-<p>请从菜单中选择：自己选择</p>
-<hr>
-<p>gpt：</p>
-<ol>
-<li><strong><code>chain.pem</code></strong></li>
-</ol>
-<ul>
-<li>** 内容 **: 包含证书链（Certificate Chain），即中间证书（Intermediate Certificates）。</li>
-<li>** 作用 **: 中间证书是由根证书颁发的，它们帮助客户端（浏览器等）验证你的服务器证书的有效性。由于根证书是可信的，但服务器证书是中间证书颁发的，中间证书就起到了连接两者的作用。</li>
-<li>** 通常由谁提供 **: 由证书颁发机构（CA，Certificate Authority）提供。</li>
-<li>** 使用场景 **: 当服务器证书并不直接由根证书颁发，而是通过中间证书链时，你需要提供 <code>chain.pem</code> 来帮助客户端构建完整的信任链。</li>
-</ul>
-<ol start="2">
-<li><strong><code>chain-only.pem</code></strong></li>
-</ol>
-<ul>
-<li>** 内容 **: 这个文件与 <code>chain.pem</code> 类似，但它只包含中间证书，不包含服务器证书本身。</li>
-<li>** 作用 **: 只提供证书链，用于配合服务器证书文件一起使用，特别是当你有多个证书文件时。</li>
-<li>** 区别 **: <code>chain-only.pem</code> 不包含服务器的证书，只包含中间证书，而 <code>chain.pem</code> 可能包含服务器证书和中间证书。</li>
-<li>** 使用场景 **: 当证书颁发机构提供了单独的中间证书链文件时，且你需要手动指定链证书而不是合并在一起使用时。</li>
-</ul>
-<ol start="3">
-<li><strong><code>crt.pem</code></strong></li>
-</ol>
-<ul>
-<li>** 内容 <strong>: 这是服务器的主 SSL 证书文件，也叫 ** 证书文件（Certificate）</strong> 或 ** 公钥证书（Public Certificate）**。</li>
-<li>** 作用 **: 该文件包含服务器的公钥，它由证书颁发机构（CA）签名，标识你的网站或服务的身份。客户端（如浏览器）使用该文件验证你的网站是否是你声称的服务器。</li>
-<li>** 通常由谁提供 **: 由证书颁发机构（CA）提供，或者通过 Let’s Encrypt 这样的服务自动生成。</li>
-<li>** 使用场景 **: 在配置 HTTPS 时，服务器会将该证书发送给客户端，客户端用来验证服务器的合法性。</li>
-</ul>
-<ol start="4">
-<li><strong><code>key.pem</code></strong></li>
-</ol>
-<ul>
-<li>** 内容 <strong>: 这是 ** 私钥文件（Private Key）</strong>，对应你的服务器证书的私钥。</li>
-<li>** 作用 **: 私钥用于解密通过服务器公钥加密的通信数据，以及生成和验证数字签名。私钥非常重要，必须保密，不能泄露给第三方。如果私钥泄露，你的服务器通信就不再安全。</li>
-<li>** 由谁生成 **: 私钥通常由你在生成证书请求（CSR）时生成，并且不会由 CA 提供。</li>
-<li>** 使用场景 **: 在服务器中，它用于解密来自客户端的加密信息，是服务器端 HTTPS 连接中非常关键的部分。</li>
-</ul>
-<p> 证书文件的组合与作用</p>
-<ul>
-<li>** 单独的证书文件 ** (<code>crt.pem</code>): 这就是你的服务器证书，它由 CA 签署，标识你的服务器身份。</li>
-<li>** 证书链文件 ** (<code>chain.pem</code>&#x2F;<code>chain-only.pem</code>): 它们帮助客户端建立信任链，确保客户端可以通过中间证书找到可信的根证书。</li>
-<li>** 私钥文件 ** (<code>key.pem</code>): 私钥文件配合服务器证书一起工作，确保通信加密的安全性。</li>
-</ul>
-<p> 在 Nginx&#x2F;Apache 中如何使用</p>
-<p>在配置 HTTPS 时，通常需要同时指定这些文件，例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name example.com;</span><br><span class="line"></span><br><span class="line">    ssl_certificate     /path/to/crt.pem;            # 服务器证书 </span><br><span class="line">    ssl_certificate_key /path/to/key.pem;            # 私钥 </span><br><span class="line">    ssl_trusted_certificate /path/to/chain.pem;      # 中间证书链 </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><code>ssl_certificate</code> 通常是服务器证书与中间证书合并在一起的文件（可以是 <code>crt.pem</code> 和 <code>chain.pem</code> 的组合）。而 <code>ssl_certificate_key</code> 则是服务器的私钥文件。</p>
-<p><strong>SSL 证书检查：</strong><a href="https://ipw.cn/ssl/?site=ipw.cn">https://ipw.cn/ssl/?site=ipw.cn</a></p>
-<p>补全你的证书链：<a href="https://whatsmychaincert.com/">https://whatsmychaincert.com/</a></p>
-]]></content>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title>记录一次配置 SSL</title>
+      <link href="/14434/"/>
+      <url>/14434/</url>
+      
+        <content type="html"><![CDATA[<ol><li>下载 win-acme：<ul><li>访问 <a href="https://www.win-acme.com/">win-acme 官网</a> 下载最新版本。</li></ul></li><li>解压并运行：<ul><li>解压下载的文件，双击 <code>wacs.exe</code>。</li></ul></li><li>选择选项：<ul><li>选择 <code>N</code> 创建新的证书，并按提示输入你的域名。</li></ul></li><li>验证域名：<ul><li>根据提示选择验证方法（如 HTTP 或 DNS 验证）。</li></ul></li><li>安装证书：<ul><li>验证成功后，win-acme 会自动为你生成并安装证书。</li></ul></li><li>定期续订：<ul><li>你可以设置任务计划，以便定期自动续订证书。</li></ul></li></ol><hr><p>双击 <code>wacs.exe</code>，输入 <code>N</code> 开始。</p><p><img src="/images/ssl/0.png" alt="image.png"> 选择:<code>2</code>，然后输入 <code>域名</code></p><p><img src="/images/ssl/1.png" alt="image.png"> ACME 服务器需要验证您是否是申请证书的域名的所有者。这在初始设置和每次未来续订时都会发生。有两种主要方法可以做到这一点：回答特定的 http 请求 (http-01) 或创建特定的 dns 记录 (dns-01)。对于通配符标识符，后者是唯一的选择。</p><p>可以从 <a href="https://github.com/win-acme/win-acme/">https://github.com/win-acme/win-acme/</a> 获取各种附加插件。</p><p>1：[http] 将验证文件保存在（网络）路径上<br>2：[http] 从内存提供验证文件<br>3：[http] 通过 FTP (S) 上传验证文件<br>4：[http] 通过 SSH-FTP 上传验证文件<br>5：[http] 通过 WebDav 上传验证文件<br>6：[dns] 手动创建验证记录（无法自动续订）<br>7：[dns] 使用 acme-dns 创建验证记录（<a href="https://github.com/joohoi/acme-dns%EF%BC%89">https://github.com/joohoi/acme-dns）</a><br>8：[dns] 使用您自己的脚本创建验证记录<br>9：[tls-alpn] 回答来自 win-acme 的 TLS 验证请求<br>C：中止</p><p>您希望如何证明对域的所有权？：</p><p>选择:<code>6</code></p><p><img src="/images/ssl/2.png" alt="image.png"> </p><p>存储插件证书存储不可用：以管理员身份运行以允许证书存储访问。</p><p>当我们拥有证书时，您可以通过一种或多种方式进行存储，以便您的应用程序可以访问它。Windows 证书存储是 IIS 的默认位置（除非您正在管理它们的集群）。</p><p>1：IIS 中央证书存储（每个主机的 .pfx）<br>2：PEM 编码文件（Apache、nginx 等）<br>3：PFX 存档<br>4：Windows 证书存储（本地计算机）<br>5：无（其他）存储步骤</p><p>您希望如何存储证书？：</p><p>选择:<code>2</code></p><p>File path: 输入存放证书的路径</p><p><img src="/images/ssl/3.png" alt="image.png"> 描述：为私钥 .pem 文件设置的密码。</p><p>1：无<br>2：在控制台中输入 &#x2F; 粘贴<br>3：在保管库中搜索</p><p>从菜单中选择：</p><p>选择：<code>1</code></p><p>gpt：设置密码可以增加安全性，防止未授权访问您的私钥。如果私钥被泄露，设置密码可以防止其被恶意使用。不过，这意味着每次使用证书时，您需要输入密码，这可能会稍显麻烦。选择不设置密码可以简化使用流程，但会降低安全性。选择哪种方式取决于您的需求和环境安全性。</p><p><img src="/images/ssl/4.png" alt="image.png"> 安装插件 IIS 不可用：以管理员身份运行以允许访问 IIS。</p><p>将证书保存到您选择的存储区后，您可以选择一个或多个步骤来更新应用程序，例如配置新的指纹或更新绑定。</p><p>1：在 IIS 中创建或更新绑定<br>2：启动外部脚本或程序<br>3：无（其他）安装步骤</p><p>应首先运行哪个安装步骤？：</p><p>选择：<code>3</code></p><p>gpt：这是一个步骤，旨在帮助您在安装完 SSL 证书后，选择是否对其他应用程序（如 IIS）进行额外配置。如果您使用的是 Nginx，则可以选择不执行额外的安装步骤。这样就可以直接使用已生成的证书。</p><p><img src="/images/ssl/5.png" alt="image.png"> 选择：<code>y</code></p><p><img src="/images/ssl/6.png" alt="image.png"> 添加 dns 记录，选择 txt，如图：<br><img src="/images/ssl/7.png" alt="image.png"><br>Please press <Enter> after you’ve created and verified the record</p><p>创建并 <code>验证</code> 记录后，请按 <code>Enter</code> 键</p><p>ps：<code>可能需要等一段时间才生效</code></p><p>N：创建证书（默认设置）<br>M：创建证书（完整选项）<br>R：运行续订（当前有 0 个到期）<br>A：管理续订（共 1 个）<br>O：更多选项…<br>Q：退出</p><p>请从菜单中选择：自己选择</p><hr><p>gpt：</p><ol><li><strong><code>chain.pem</code></strong></li></ol><ul><li>** 内容 **: 包含证书链（Certificate Chain），即中间证书（Intermediate Certificates）。</li><li>** 作用 **: 中间证书是由根证书颁发的，它们帮助客户端（浏览器等）验证你的服务器证书的有效性。由于根证书是可信的，但服务器证书是中间证书颁发的，中间证书就起到了连接两者的作用。</li><li>** 通常由谁提供 **: 由证书颁发机构（CA，Certificate Authority）提供。</li><li>** 使用场景 **: 当服务器证书并不直接由根证书颁发，而是通过中间证书链时，你需要提供 <code>chain.pem</code> 来帮助客户端构建完整的信任链。</li></ul><ol start="2"><li><strong><code>chain-only.pem</code></strong></li></ol><ul><li>** 内容 **: 这个文件与 <code>chain.pem</code> 类似，但它只包含中间证书，不包含服务器证书本身。</li><li>** 作用 **: 只提供证书链，用于配合服务器证书文件一起使用，特别是当你有多个证书文件时。</li><li>** 区别 **: <code>chain-only.pem</code> 不包含服务器的证书，只包含中间证书，而 <code>chain.pem</code> 可能包含服务器证书和中间证书。</li><li>** 使用场景 **: 当证书颁发机构提供了单独的中间证书链文件时，且你需要手动指定链证书而不是合并在一起使用时。</li></ul><ol start="3"><li><strong><code>crt.pem</code></strong></li></ol><ul><li>** 内容 <strong>: 这是服务器的主 SSL 证书文件，也叫 ** 证书文件（Certificate）</strong> 或 ** 公钥证书（Public Certificate）**。</li><li>** 作用 **: 该文件包含服务器的公钥，它由证书颁发机构（CA）签名，标识你的网站或服务的身份。客户端（如浏览器）使用该文件验证你的网站是否是你声称的服务器。</li><li>** 通常由谁提供 **: 由证书颁发机构（CA）提供，或者通过 Let’s Encrypt 这样的服务自动生成。</li><li>** 使用场景 **: 在配置 HTTPS 时，服务器会将该证书发送给客户端，客户端用来验证服务器的合法性。</li></ul><ol start="4"><li><strong><code>key.pem</code></strong></li></ol><ul><li>** 内容 <strong>: 这是 ** 私钥文件（Private Key）</strong>，对应你的服务器证书的私钥。</li><li>** 作用 **: 私钥用于解密通过服务器公钥加密的通信数据，以及生成和验证数字签名。私钥非常重要，必须保密，不能泄露给第三方。如果私钥泄露，你的服务器通信就不再安全。</li><li>** 由谁生成 **: 私钥通常由你在生成证书请求（CSR）时生成，并且不会由 CA 提供。</li><li>** 使用场景 **: 在服务器中，它用于解密来自客户端的加密信息，是服务器端 HTTPS 连接中非常关键的部分。</li></ul><p> 证书文件的组合与作用</p><ul><li>** 单独的证书文件 ** (<code>crt.pem</code>): 这就是你的服务器证书，它由 CA 签署，标识你的服务器身份。</li><li>** 证书链文件 ** (<code>chain.pem</code>&#x2F;<code>chain-only.pem</code>): 它们帮助客户端建立信任链，确保客户端可以通过中间证书找到可信的根证书。</li><li>** 私钥文件 ** (<code>key.pem</code>): 私钥文件配合服务器证书一起工作，确保通信加密的安全性。</li></ul><p> 在 Nginx&#x2F;Apache 中如何使用</p><p>在配置 HTTPS 时，通常需要同时指定这些文件，例如：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name example.com;</span><br><span class="line"></span><br><span class="line">    ssl_certificate     /path/to/crt.pem;            # 服务器证书 </span><br><span class="line">    ssl_certificate_key /path/to/key.pem;            # 私钥 </span><br><span class="line">    ssl_trusted_certificate /path/to/chain.pem;      # 中间证书链 </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><code>ssl_certificate</code> 通常是服务器证书与中间证书合并在一起的文件（可以是 <code>crt.pem</code> 和 <code>chain.pem</code> 的组合）。而 <code>ssl_certificate_key</code> 则是服务器的私钥文件。</p><p><strong>SSL 证书检查：</strong><a href="https://ipw.cn/ssl/?site=ipw.cn">https://ipw.cn/ssl/?site=ipw.cn</a></p><p>补全你的证书链：<a href="https://whatsmychaincert.com/">https://whatsmychaincert.com/</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>alist ipv6 反向代理</title>
+      <link href="/61951/"/>
+      <url>/61951/</url>
+      
+        <content type="html"><![CDATA[<h1 id="alist-ipv6-反向代理"><a href="#alist-ipv6-反向代理" class="headerlink" title="alist ipv6 反向代理"></a>alist ipv6 反向代理</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载 nginx：<a href="https://nginx.org/cn/">https://nginx.org/cn/</a></p><p>进去我们下载稳定版本</p><p><img src="/images/alistipv6/0.png" alt="image.png"></p><h2 id="解压运行"><a href="#解压运行" class="headerlink" title="解压运行"></a>解压运行</h2><p><img src="/images/alistipv6/1.png" alt="image.png"></p><ul><li>文件说明<ul><li>conf：存在 Nginx 配置文件的目录</li><li>docs：存放 Nginx 文档的目录</li><li>html：存放静态 html 文件的目录</li><li>logs：存放 Nginx 日志的目录</li><li>temp：存放临时文件的目录</li></ul></li></ul><h2 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h2><p>** 解压后，使用命令进行操作，不要直接双击 nginx.exe**</p><ul><li>一定要在 dos 窗口启动，不要直接双击 nginx.exe，这样会导致修改配置后重启、停止 nginx 无效，需要手动关闭任务管理器内的所有 nginx 进程，再启动才可以</li></ul><p>在文件目录右键在终端中打开</p><p><img src="/images/alistipv6/2.png" alt="image.png"></p><p>启动 nginx 服务，启动时会一闪而过是正常的</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start nginx</span><br></pre></td></tr></table></figure><p>浏览器访问 <a href="http://127.0.0.1/">http://127.0.0.1/</a><br><img src="/images/alistipv6/3.png" alt="image.png"></p><p>这样就是成功的访问，</p><ul><li>常见的错误：</li><li>(1) 端口号被占用</li><li>(2) nginx 文件夹路径含中文</li><li>其他错误就详细看 log 中的描述</li></ul><h2 id="转发端口"><a href="#转发端口" class="headerlink" title="转发端口"></a>转发端口</h2><p>修改 nginx 配置文件，路径在 “nginx-1.26.2\conf\nginx.conf”</p><p>在 server 块中添加 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">listen       80;</span><br></pre></td></tr></table></figure><p>这样 Nginx 会同时监听 IPv4 和 IPv6 请求</p><p><code>server_name     localhost;</code> 这个 localhost 修改为你的 <code>域名</code> 例如 xxx.com</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">listen       80;          # 监听 IPv4</span><br><span class="line">listen       [::]:80;     # 监听 IPv6</span><br><span class="line">server_name    localhost; #这里修改为你的域名 </span><br></pre></td></tr></table></figure><p>在 <code>location</code> 块中添加</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">proxy_pass  <span class="attr">http</span>:<span class="comment">//127.0.0.1:5244/; # 代理转发到本地服务 </span></span><br><span class="line"></span><br><span class="line"># 保持主机名一致 </span><br><span class="line">proxy_set_header <span class="title class_">Host</span> $host;</span><br><span class="line">proxy_set_header X-<span class="title class_">Real</span>-<span class="variable constant_">IP</span> $remote_addr;</span><br><span class="line">proxy_set_header X-<span class="title class_">Forwarded</span>-<span class="title class_">For</span> $proxy_add_x_forwarded_for;</span><br><span class="line">proxy_set_header X-<span class="title class_">Forwarded</span>-<span class="title class_">Proto</span> $scheme;</span><br><span class="line"></span><br><span class="line"># 支持 <span class="title class_">WebSocket</span> 或长连接的升级头 </span><br><span class="line">proxy_http_version <span class="number">1.1</span>;</span><br><span class="line">proxy_set_header <span class="title class_">Upgrade</span> $http_upgrade;</span><br><span class="line">proxy_set_header <span class="title class_">Connection</span> <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line"></span><br><span class="line"># 确保大文件传输 </span><br><span class="line">proxy_buffering off;</span><br><span class="line">proxy_request_buffering off;</span><br><span class="line"></span><br><span class="line"># 确保返回正确的文件流 </span><br><span class="line">proxy_set_header <span class="title class_">Range</span> $http_range;</span><br><span class="line">proxy_set_header <span class="title class_">If</span>-<span class="title class_">Range</span> $http_if_range;</span><br></pre></td></tr></table></figure><p>如图</p><p><img src="/images/alistipv6/4.png" alt="image.png"></p><p>提示</p><p><code>root</code> 和 <code>index</code>**：在 <code>location /</code> 块中，去掉 <code>root</code> 和 <code>index</code> 的配置，因为这些通常不需要在代理设置中指定。如果你的应用需要这些，可以单独设置一个新的 <code>location</code>。</p><ul><li>如果程序没启动就直接 start nginx 启动，如果已经启动了就使用以下命令重新加载配置文件并重启</li></ul><p><code>nginx -s reload</code></p><ul><li>关闭 nginx 服务使用以下命令，同样也是一闪而过是正常的，看一下是否进程已消失即可快速停止</li></ul><p><code>nginx -s stop</code></p><ul><li>完整有序的关闭</li></ul><p><code>nginx -s quit</code></p><h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><ul><li>我们可以不用通过域名后面加端口号访问</li></ul><p>参考链接：<a href="https://www.cnblogs.com/dream-ze/p/17663199.html">https://www.cnblogs.com/dream-ze/p/17663199.html</a></p><p>如果无法访问请检查：</p><ul><li>检查路由器设置：确保路由器也支持 IPv6，并且已经设置了适当的转发。</li><li>防火墙设置：确保防火墙允许通过 IPv6 访问 80 端口。</li><li>测试：在手机上使用 <code>http://[你的 IPv6 地址]</code> 进行访问。</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ipv6 搭建 alist 并使用域名绑定</title>
+      <link href="/56572/"/>
+      <url>/56572/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ipv6-搭建-alist-并使用域名绑定"><a href="#ipv6-搭建-alist-并使用域名绑定" class="headerlink" title="ipv6 搭建 alist 并使用域名绑定"></a>ipv6 搭建 alist 并使用域名绑定</h1><h2 id="1-光猫桥接、路由器设置-pppoe-拨号"><a href="#1-光猫桥接、路由器设置-pppoe-拨号" class="headerlink" title="1. 光猫桥接、路由器设置 pppoe 拨号"></a>1. 光猫桥接、路由器设置 pppoe 拨号</h2><p>先按照此教程设置</p><p>电信：<a href="https://ipw.cn/doc/ipv6/user/enable_ipv6.html">个人宽带如何开启 IPv6 网络访问 | IP 查询 (ipw.cn)</a></p><p>移动：<a href="https://post.smzdm.com/p/a30eo9vr/">https://post.smzdm.com/p/a30eo9vr/</a> </p><p>ipv6 测试网站地址：<a href="http://test-ipv6.com/">test-ipv6.com</a></p><p>光猫配置完毕之后，在路由器中开启 ipv6 功能</p><p>检查 ipv6</p><p><img src="/images/20241020181528.png"></p><p>** 终端 ** 输入 <code>ipconfig</code> 或者 <code>curl  test.ipw.cn</code> 查看 <strong>ip</strong></p><blockquote><p>移动 ipv6 是 2409 开头的。<br>电信 ipv6 是 240e 开头的<br>联通 ipv6 是 2408 开头的。</p></blockquote><h2 id="2、配置-Alist"><a href="#2、配置-Alist" class="headerlink" title="2、配置 Alist"></a>2、配置 Alist</h2><p>参考该视频进行配置： <a href="https://www.bilibili.com/video/BV1384y1K7js/?share_source=copy_web&;vd_source=be289850c5c5594f40d7931ca1122b8b">https://www.bilibili.com/video/BV1384y1K7js/?share_source&#x3D;copy_web&amp;;vd_source&#x3D;be289850c5c5594f40d7931ca1122b8b</a> </p><p>配置好后浏览器输入 <a href="http://127.0.0.1:5244/">http://127.0.0.1:5244/</a> 访问</p><h2 id="3-外网访问"><a href="#3-外网访问" class="headerlink" title="3. 外网访问"></a>3. 外网访问</h2><p>在路由器配置 ** 端口转发 ** 或者 <strong>DMZ</strong></p><p>然后关闭 <strong>WIFI</strong> 打开手机的数据</p><p>访问你的 alist</p><p><code>[你的 ipv6 地址]:5244</code></p><p>这样就完成了外网访问</p><p>若是访问失败，检查光猫或路由器的 **IPv6 防火墙 ** 配置是否正确</p><p>但是 ** 公网 **IPv6 地址每隔一段时间或者重启路由器就会发生变化，变化之后就 ** 无法访问 ** 了</p><p>这个时候就要使用 ddns 工具，实时的将我们的 IPv6 地址解析到域名，然后我们直接访问域名就好</p><h2 id="4-DDNS-绑定-IPv6"><a href="#4-DDNS-绑定-IPv6" class="headerlink" title="4.DDNS 绑定 IPv6"></a><strong>4.DDNS 绑定 IPv6</strong></h2><p>首先需要有一个自己的域名，免费的域名挺多，但是会有一些限制，不介意的可以自己去申请，只要能够使用 <strong>cloudflare</strong> 等 DNS 商即可</p><p>或者在阿里云、腾讯云、新网、万网这些平台购买一个域名，价格也不贵，最便宜的也才几块钱一年，如果域名有备案的话，默认网页端口 80，443 随便使用；** 如果没有备案，请不要使用上述两个端口！**</p><p>下面以托管在 <strong>cloudflare</strong> 的域名为例：</p><p>进入 <strong>cloudflare API</strong> 令牌配置页面</p><p><img src="/images/alist1.png" alt="image.png"></p><p>点创建令牌，选择 ** 编辑区域 DNS<strong>，点继续，将 ** 令牌 ** 复制好（</strong> 注意！令牌只显示一次 **）</p><p>下载 ddns-go，ddns-go 地址:<a href="https://github.com/jeessy2/ddns-go">https://github.com/jeessy2/ddns-go</a>，下载好后解压打开文件夹，在文件根目录打开终端输入.\ddns-go.exe 运行</p><p>然后浏览器访问 <a href="http://127.0.0.1:9876/">http://127.0.0.1:9876/</a></p><p>一般默认的端口是 9876</p><p><img src="/images/alist2.png" alt="image.png"></p><p>dns 服务商选择 Cloudflare，Token 填写你刚刚复制好的令牌，TTL 自动就好</p><p>下滑找到 ipv6 并打钩，获取 IP 方式选择网卡或者接口，Domains 里面输入你的域名地址</p><p>保存。</p><p>域名解析需要一定时间生效，需要等一段时间才能访问</p><p>访问输入：域名：5244 就可以了</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>破解电信天翼网关超级管理员密码</title>
+      <link href="/50479/"/>
+      <url>/50479/</url>
+      
+        <content type="html"><![CDATA[<h1 id="破解电信天翼网关超级管理员密码"><a href="#破解电信天翼网关超级管理员密码" class="headerlink" title="破解电信天翼网关超级管理员密码"></a>破解电信天翼网关超级管理员密码</h1><h3 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h3><p>地址：广东</p><p>运营商：电信</p><p>设备类型：XG-PON 天翼网关</p><p>光猫型号：UNG-EHD4  </p><hr><p>我们先要知道光猫后背的账号密码</p><p>然后下载 flashfxp，打开点右上角的会话 - 快速连接</p><p><img src="/images/0.png"></p><p>打开后填入地址 192.168.1.1，用户名跟密码就填写光猫后面的</p><p><img src="/images/1.png" alt="image.png"></p><p>进去之后到文件根目录找到 boaroot 点进去有个叫 romfile.cfg 的文件把他下载到我们的电脑</p><p>路径在 &#x2F;boaroot&#x2F;html&#x2F;romfile 1.cfg</p><p><img src="/images/2.png" alt="image.png"></p><p><img src="/images/3.png" alt="image.png"></p><p>传输到电脑之后右键查看，可以用记事本或者其他编辑器打开</p><p>我这里使用 VS code 打开，打开后 ctrl+f 搜索 telecomadmin，后面就是超级密码</p><p>登陆使用 telecomadmin 加超级密码登陆</p><p><img src="/images/4.png" alt="image.png"></p><p>还有搜索 password，宽带账号密码也在里面</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown 语法速查</title>
+      <link href="/3218/"/>
+      <url>/3218/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Markdown-语法速查"><a href="#Markdown-语法速查" class="headerlink" title="Markdown 语法速查"></a>Markdown 语法速查</h1><p>Markdown 是一种轻量级标记语言，广泛用于文档和博客的撰写。以下是 Markdown 的常用语法速查表，方便查阅和使用。</p><hr><p>Markdown 基本语法：<a href="https://markdown.com.cn/basic-syntax/">https://markdown.com.cn/basic-syntax/</a></p><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用 <code>#</code> 号表示不同级别的标题，<code>#</code> 的数量对应标题级别。</p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题 </span></span><br><span class="line"><span class="section">## 二级标题 </span></span><br><span class="line"><span class="section">### 三级标题 </span></span><br><span class="line"><span class="section">#### 四级标题 </span></span><br><span class="line"><span class="section">##### 五级标题 </span></span><br><span class="line"><span class="section">###### 六级标题 </span></span><br></pre></td></tr></table></figure><h2 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h2><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><ul><li>斜体文本 *<br><em>斜体文本</em></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 斜体文本 *</span><br><span class="line">_斜体文本_</span><br></pre></td></tr></table></figure><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>** 粗体文本 **<br><strong>粗体文本</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">** 粗体文本 **</span><br><span class="line">__粗体文本__</span><br></pre></td></tr></table></figure><h3 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h3><p>** 粗体文本 **<br><strong>粗体文本</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">** 粗体文本 **</span><br><span class="line">__粗体文本__</span><br></pre></td></tr></table></figure><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr><hr><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">___</span><br></pre></td></tr></table></figure><h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>~~ 要删除的文本～～</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~ 要删除的文本～～</span><br></pre></td></tr></table></figure><h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul><li>项目一</li><li>项目二<ul><li>子项目</li><li>子项目</li></ul></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 项目一 </span><br><span class="line">* 项目二 </span><br><span class="line">  - 子项目 </span><br><span class="line">  - 子项目 </span><br></pre></td></tr></table></figure><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><ol><li>项目一</li><li>项目二</li><li>项目三</li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 项目一 </span><br><span class="line">2. 项目二 </span><br><span class="line">3. 项目三 </span><br></pre></td></tr></table></figure><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><ul><li><input disabled="" type="checkbox"> 待办事项 1</li><li><input checked="" disabled="" type="checkbox"> 已完成事项 1</li><li><input disabled="" type="checkbox"> 待办事项 2<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 待办事项 1</span><br><span class="line">- [x] 已完成事项 1</span><br><span class="line">- [ ] 待办事项 2</span><br></pre></td></tr></table></figure></li></ul><h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p>** 粗体 ** 使用 ** 或 __ 包围文字。</p><ul><li>斜体 * 使用 * 或 _ 包围文字。<br>*** 加粗斜体 *** 使用 *** 或 ___ 包围文字。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">** 这是粗体 **  </span><br><span class="line">* 这是斜体 *  </span><br><span class="line">*** 这是加粗且斜体 ***</span><br></pre></td></tr></table></figure></li></ul><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>引用使用 &gt; 符号。</p><blockquote><p>这是一个引用</p><blockquote><p>嵌套的引用</p></blockquote></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一个引用 </span><br><span class="line">&gt;&gt; 嵌套的引用 </span><br></pre></td></tr></table></figure><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p><code>这是` 行内代码 `示例。</code></p><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>使用三个反引号来创建代码块。可以指定语言。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br></pre></td></tr></table></figure><hr><h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><h2 id="行内链接"><a href="#行内链接" class="headerlink" title="行内链接"></a>行内链接</h2><p><a href="https://www.markdownguide.org/">Markdown 官方文档</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Markdown 官方文档](https://www.markdownguide.org)</span><br></pre></td></tr></table></figure><h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p><a href="https://www.google.com/">https://www.google.com</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;https://www.google.com&gt;</span><br></pre></td></tr></table></figure><h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><img src="/akari-1400.png" alt="本地图片"><br><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="网络图片"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![本地图片](akari-1400.png)</span><br><span class="line">![网络图片](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)</span><br></pre></td></tr></table></figure><h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>使用 | 分隔单元格，- 分隔表头和内容。</p><table><thead><tr><th align="left">左对齐</th><th align="right">右对齐</th><th align="center">居中对齐</th></tr></thead><tbody><tr><td align="left">内容 1</td><td align="right">内容 2</td><td align="center">内容 3</td></tr><tr><td align="left">内容 4</td><td align="right">内容 5</td><td align="center">内容 6</td></tr></tbody></table><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :----- | -----: | :------: |</span><br><span class="line">| 内容 1  |   内容 2|  内容 3   |</span><br><span class="line">| 内容 4  |   内容 5|  内容 6   |</span><br></pre></td></tr></table></figure><h1 id="注脚"><a href="#注脚" class="headerlink" title="注脚"></a>注脚</h1><p>这是一段有注脚的文本 <a href="%E8%BF%99%E6%98%AF%E6%B3%A8%E8%84%9A%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%82">^1</a>。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> 这是一段有注脚的文本 [^1]。</span><br><span class="line"></span><br><span class="line">[^1]: 这是注脚的内容。</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+            <tag> 语法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>看看烟花吧</title>
+      <link href="/63552/"/>
+      <url>/63552/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>css 和 js 代码</title>
+      <link href="/59732/"/>
+      <url>/59732/</url>
+      
+        <content type="html"><![CDATA[<p>内容来自网上</p><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>导航栏居中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#nav .menus_items &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: fit-content;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX (-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>透明度调节</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */</span><br><span class="line">.layout_post&gt;#post &#123;</span><br><span class="line">  /* 以下代表透明度为 0.7 可以自行修改 */</span><br><span class="line">  background: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 所有页面背景 */</span><br><span class="line">#aside_content .card-widget, #recent-posts&gt;.recent-post-item, .layout_page&gt;div:first-child:not (.recent-posts), .layout_post&gt;#page, .layout_post&gt;#post, .read-mode .layout_post&gt;#post&#123;</span><br><span class="line">  /* 以下代表透明度为 0.7 */</span><br><span class="line">  background: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 侧边卡片的透明度 */</span><br><span class="line">:root &#123;</span><br><span class="line">--card-bg: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 页脚透明 */</span><br><span class="line">#footer &#123;</span><br><span class="line">/* 以下代表透明度为 0.7 */</span><br><span class="line">background: rgba (255, 255, 255, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>标签页添加 w (ﾟДﾟ) w 不要走！再看看嘛！，回到本站显示♪(^∇^*) 欢迎回来！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  // 动态标题 </span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener (&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        // 离开当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;w (ﾟДﾟ) w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout (titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        // 返回当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;♪(^∇^*) 欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        // 两秒后变回正常标题 </span><br><span class="line">        titleTime = setTimeout (function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>添加自定义 css 和 js 文件</title>
+      <link href="/45104/"/>
+      <url>/45104/</url>
+      
+        <content type="html"><![CDATA[<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>如果想魔改和美化，添加自定义文件是不可避免的。下面来详细说一下 css 和 js 文件的创建和引入，其他文件同理。<br>我们找到博客根目录下的 source 文件夹（主题的 source 虽然也可以，但是不推荐）<br>在里面创建 js 和 css 文件夹，也可以创建其他文件夹，例如存放图片的 img 文件夹，存放字体的 font 文件夹等等。</p><h2 id="引入文件"><a href="#引入文件" class="headerlink" title="引入文件"></a>引入文件</h2><p>在主题配置文件（_config.butterfly.yml）里面的 inject 引入（不知道这个文件的去看文档）<br>css 文件一般在 head 引入，js 文件一般在 bottom 里引入，特殊情况除外。<br>例如引入 css 文件夹里面的 style.css 和 js 文件夹里面的 script.js，可以这样写:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">    # 自定义 css</span><br><span class="line">    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css?1&quot;&gt;</span><br><span class="line">    # 静态文件后面加个？任意内容  可以在每次更新之后用户自动重新请求.</span><br><span class="line">    # 例如添加？1 , 在修改此文件后改成？2 , 用户访问你的网站时，不会使用本地的缓存，而是请求新的内容。没修改的话就不用动。</span><br><span class="line">  bottom:</span><br><span class="line">    # 自定义 js</span><br><span class="line">    - &lt;script src=&quot;/js/script.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    # 引入多个文件就直接往下复制一行改一下文件名即可，如下：</span><br><span class="line">    - &lt;script src=&quot;/js/script1.js?1&quot;&gt;&lt;/script&gt;</span><br><span class="line">    - &lt;script src=&quot;/js/script2.js?1&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>注意：路径最前面是斜杠，而不是点斜杠，即 &#x2F;xx&#x2F;xxx.js，而不是.&#x2F;xx&#x2F;xxx.js。<br>参考链接：<a href="https://blog.leonus.cn/2022/custom.html">https://blog.leonus.cn/2022/custom.html</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Butterfly 美化</title>
+      <link href="/14880/"/>
+      <url>/14880/</url>
+      
+        <content type="html"><![CDATA[<h2 id="生成文章唯一链接"><a href="#生成文章唯一链接" class="headerlink" title="生成文章唯一链接"></a>生成文章唯一链接</h2><p>Hexo 的默认文章链接格式是年，月，日，标题这种格式来生成。<br>如果标题是中文，那 URL 链接就会包含中文。</p><p>1、安装插件，在博客根目录打开终端，运行以下指令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure><p>2、插件安装成功后，在根目录的配置文件 _config.yml 找到 permalink：<br>修改为</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">permalink: :abbrlink/</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc16      #support crc16 (default) and crc32</span><br><span class="line">  rep: dec        #support dec (default) and hex</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="顶部图"><a href="#顶部图" class="headerlink" title="顶部图"></a>顶部图</h2><table><thead><tr><th>配置</th><th>解释</th></tr></thead><tbody><tr><td>index_img</td><td>主页的 top_img</td></tr><tr><td>default_top_img</td><td>默认的 top_img，当页面的 top_img 没有配置时，会显示 default_top_img</td></tr><tr><td>archive_img</td><td>归档页面的 top_img</td></tr><tr><td>tag_img</td><td>tag 子页面 的 默认 top_img</td></tr><tr><td>tag_per_img</td><td>tag 子页面的 top_img，可配置每个 tag 的 top_img</td></tr><tr><td>category_img</td><td>category 子页面 的 默认 top_img</td></tr><tr><td>category_per_img</td><td>category 子页面的 top_img，可配置每个 category 的 top_img</td></tr></tbody></table><p>其它页面 （tags&#x2F;categories&#x2F; 自建页面）和文章页的 top_img ，请到对应的 md 页面设置 front-matter 中的 top_img</p><p>tag_per_img 和 category_per_img 是 3.2.0 新增的内容，可对 tag 和 category 进行单独的配置</p><p>并不推荐为每个 tag 和每个 category 都配置不同的顶部图，因为配置太多会拖慢生成速度</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tag_per_img：</span><br><span class="line">  aplayer: https://xxxxxx.png</span><br><span class="line">  android: ddddddd.png</span><br><span class="line"></span><br><span class="line">category_per_img：</span><br><span class="line">  随想: hdhdh.png</span><br><span class="line">  推荐: ddjdjdjd.png</span><br></pre></td></tr></table></figure><h2 id="footer-背景"><a href="#footer-背景" class="headerlink" title="footer 背景"></a>footer 背景</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># footer 是否显示图片背景 (与 top_img 一致)</span><br><span class="line">footer_bg: true</span><br></pre></td></tr></table></figure><h2 id="网站副标题"><a href="#网站副标题" class="headerlink" title="网站副标题"></a>网站副标题</h2><p>可设置主页中展示的网站副标题或者自己喜欢的座右铭</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">source: 1</span><br><span class="line"># If you close the typewriter effect, the subtitle will only show the first line of sub</span><br><span class="line">sub:</span><br><span class="line">  - 你好啊！(´◊ω◊｀) </span><br></pre></td></tr></table></figure><h2 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h2><p>可自行决定哪个项目需要显示，可决定位置，也可以设置不显示侧边栏。<br>在 Aside Settings 中设置</p><h2 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h2><p>根目录执行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount —save or yarn add hexo-wordcount</span><br></pre></td></tr></table></figure><p>主题配置 wordcount:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wordcount:</span><br><span class="line">  enable: true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure><h2 id="动态标题"><a href="#动态标题" class="headerlink" title="动态标题"></a>动态标题</h2><p>  标签页显示 w (ﾟДﾟ) w 不要走！再看看嘛！，回到本站显示♪(^∇^*) 欢迎回来！<br>  在自定义 JS 中加入以下代码：<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  // 动态标题 </span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener (&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        // 离开当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;w (ﾟДﾟ) w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout (titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        // 返回当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;♪(^∇^*) 欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        // 两秒后变回正常标题 </span><br><span class="line">        titleTime = setTimeout (function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 美化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>星穹铁道 grub 主题</title>
+      <link href="/14870/"/>
+      <url>/14870/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">GRUB 主题</a><br><a href="https://github.com/voidlhf/StarRailGrubThemes">github 地址</a></p><h3 id="以-Firefly-cn-为例"><a href="#以-Firefly-cn-为例" class="headerlink" title="以 Firefly_cn 为例"></a>以 Firefly_cn 为例</h3><p><img src="/res/img/post/Firefly_cn.png"><br>下载 Firefly 压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure><h3 id="编辑-grub-文件"><a href="#编辑-grub-文件" class="headerlink" title="编辑 grub 文件"></a>编辑 grub 文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure><p>文本底部添加主题<br>按 i 进入进入编辑模式<br>esc 退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br></pre></td></tr></table></figure><h3 id="更新-grub"><a href="#更新-grub" class="headerlink" title="更新 grub"></a>更新 grub</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure><h3 id="至此大功告成，重启电脑！"><a href="#至此大功告成，重启电脑！" class="headerlink" title="至此大功告成，重启电脑！"></a>至此大功告成，重启电脑！</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> grub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>主题</title>
+      <link href="/undefined/"/>
+      <url>/undefined/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/16107/"/>
+      <url>/16107/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试</title>
+      <link href="/37773/"/>
+      <url>/37773/</url>
+      
+        <content type="html"><![CDATA[<p>你的文章内容</p><p><img src="/images/wt.jpg" alt="(可以写关于图片的描述)"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+            <tag> 分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
