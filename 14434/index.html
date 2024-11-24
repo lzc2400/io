@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>记录一次配置 SSL | CaMeiki</title><meta name="author" content="CaMeiki"><meta name="copyright" content="CaMeiki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="** 下载 win-acme**： 访问 win-acme 官网 下载最新版本。   ** 解压并运行 **： 解压下载的文件，双击 wacs.exe。   ** 选择选项 **： 选择 N 创建新的证书，并按提示输入你的域名。   ** 验证域名 **： 根据提示选择验证方法（如 HTTP 或 DNS 验证）。   ** 安装证书 **： 验证成功后，win-acme 会自动为你生成并安装证书">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一次配置 SSL">
+<meta property="og:url" content="http://cameiki.com/14434/index.html">
+<meta property="og:site_name" content="CaMeiki">
+<meta property="og:description" content="** 下载 win-acme**： 访问 win-acme 官网 下载最新版本。   ** 解压并运行 **： 解压下载的文件，双击 wacs.exe。   ** 选择选项 **： 选择 N 创建新的证书，并按提示输入你的域名。   ** 验证域名 **： 根据提示选择验证方法（如 HTTP 或 DNS 验证）。   ** 安装证书 **： 验证成功后，win-acme 会自动为你生成并安装证书">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cameiki.com/res/img/7143ced1e39eea1d646a358fd761733.jpg">
+<meta property="article:published_time" content="2024-10-26T04:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-24T15:15:54.250Z">
+<meta property="article:author" content="CaMeiki">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cameiki.com/res/img/7143ced1e39eea1d646a358fd761733.jpg"><link rel="shortcut icon" href="/"><link rel="canonical" href="http://cameiki.com/14434/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '记录一次配置 SSL',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-11-24 23:15:54'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><link rel="stylesheet" href="/res/css/style.css?v1"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(res/img/background.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/res/img/7143ced1e39eea1d646a358fd761733.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">CaMeiki</span></a><a class="nav-page-title" href="/"><span class="site-name">记录一次配置 SSL</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">记录一次配置 SSL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-26T04:00:00.000Z" title="发表于 2024-10-26 12:00:00">2024-10-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-24T15:15:54.250Z" title="更新于 2024-11-24 23:15:54">2024-11-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ol>
+<li>** 下载 win-acme**：<ul>
+<li>访问 <a target="_blank" rel="noopener" href="https://www.win-acme.com/">win-acme 官网</a> 下载最新版本。</li>
+</ul>
+</li>
+<li>** 解压并运行 **：<ul>
+<li>解压下载的文件，双击 <code>wacs.exe</code>。</li>
+</ul>
+</li>
+<li>** 选择选项 **：<ul>
+<li>选择 <code>N</code> 创建新的证书，并按提示输入你的域名。</li>
+</ul>
+</li>
+<li>** 验证域名 **：<ul>
+<li>根据提示选择验证方法（如 HTTP 或 DNS 验证）。</li>
+</ul>
+</li>
+<li>** 安装证书 **：<ul>
+<li>验证成功后，win-acme 会自动为你生成并安装证书。</li>
+</ul>
+</li>
+<li>** 定期续订 **：<ul>
+<li>你可以设置任务计划，以便定期自动续订证书。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>双击 <code>wacs.exe</code>，输入 <code>N</code> 开始。</p>
+<p><img src="/images/ssl/0.png" alt="image.png"> 选择:<code>2</code>，然后输入 <code>域名</code></p>
+<p><img src="/images/ssl/1.png" alt="image.png"> ACME 服务器需要验证您是否是申请证书的域名的所有者。这在初始设置和每次未来续订时都会发生。有两种主要方法可以做到这一点：回答特定的 http 请求 (http-01) 或创建特定的 dns 记录 (dns-01)。对于通配符标识符，后者是唯一的选择。</p>
+<p>可以从 <a target="_blank" rel="noopener" href="https://github.com/win-acme/win-acme/">https://github.com/win-acme/win-acme/</a> 获取各种附加插件。</p>
+<p>1：[http] 将验证文件保存在（网络）路径上<br>2：[http] 从内存提供验证文件<br>3：[http] 通过 FTP (S) 上传验证文件<br>4：[http] 通过 SSH-FTP 上传验证文件<br>5：[http] 通过 WebDav 上传验证文件<br>6：[dns] 手动创建验证记录（无法自动续订）<br>7：[dns] 使用 acme-dns 创建验证记录（<a target="_blank" rel="noopener" href="https://github.com/joohoi/acme-dns%EF%BC%89">https://github.com/joohoi/acme-dns）</a><br>8：[dns] 使用您自己的脚本创建验证记录<br>9：[tls-alpn] 回答来自 win-acme 的 TLS 验证请求<br>C：中止</p>
+<p>您希望如何证明对域的所有权？：</p>
+<p>选择:<code>6</code></p>
+<p><img src="/images/ssl/2.png" alt="image.png"> </p>
+<p>存储插件证书存储不可用：以管理员身份运行以允许证书存储访问。</p>
+<p>当我们拥有证书时，您可以通过一种或多种方式进行存储，以便您的应用程序可以访问它。Windows 证书存储是 IIS 的默认位置（除非您正在管理它们的集群）。</p>
+<p>1：IIS 中央证书存储（每个主机的 .pfx）<br>2：PEM 编码文件（Apache、nginx 等）<br>3：PFX 存档<br>4：Windows 证书存储（本地计算机）<br>5：无（其他）存储步骤</p>
+<p>您希望如何存储证书？：</p>
+<p>选择:<code>2</code></p>
+<p>File path: 输入存放证书的路径</p>
+<p><img src="/images/ssl/3.png" alt="image.png"> 描述：为私钥 .pem 文件设置的密码。</p>
+<p>1：无<br>2：在控制台中输入 &#x2F; 粘贴<br>3：在保管库中搜索</p>
+<p>从菜单中选择：</p>
+<p>选择：<code>1</code></p>
+<p>gpt：设置密码可以增加安全性，防止未授权访问您的私钥。如果私钥被泄露，设置密码可以防止其被恶意使用。不过，这意味着每次使用证书时，您需要输入密码，这可能会稍显麻烦。选择不设置密码可以简化使用流程，但会降低安全性。选择哪种方式取决于您的需求和环境安全性。</p>
+<p><img src="/images/ssl/4.png" alt="image.png"> 安装插件 IIS 不可用：以管理员身份运行以允许访问 IIS。</p>
+<p>将证书保存到您选择的存储区后，您可以选择一个或多个步骤来更新应用程序，例如配置新的指纹或更新绑定。</p>
+<p>1：在 IIS 中创建或更新绑定<br>2：启动外部脚本或程序<br>3：无（其他）安装步骤</p>
+<p>应首先运行哪个安装步骤？：</p>
+<p>选择：<code>3</code></p>
+<p>gpt：这是一个步骤，旨在帮助您在安装完 SSL 证书后，选择是否对其他应用程序（如 IIS）进行额外配置。如果您使用的是 Nginx，则可以选择不执行额外的安装步骤。这样就可以直接使用已生成的证书。</p>
+<p><img src="/images/ssl/5.png" alt="image.png"> 选择：<code>y</code></p>
+<p><img src="/images/ssl/6.png" alt="image.png"> 添加 dns 记录，选择 txt，如图：<br><img src="/images/ssl/7.png" alt="image.png"><br>Please press <Enter> after you’ve created and verified the record</p>
+<p>创建并 <code>验证</code> 记录后，请按 <code>Enter</code> 键</p>
+<p>ps：<code>可能需要等一段时间才生效</code></p>
+<p>N：创建证书（默认设置）<br>M：创建证书（完整选项）<br>R：运行续订（当前有 0 个到期）<br>A：管理续订（共 1 个）<br>O：更多选项…<br>Q：退出</p>
+<p>请从菜单中选择：自己选择</p>
+<hr>
+<p>gpt：</p>
+<ol>
+<li><strong><code>chain.pem</code></strong></li>
+</ol>
+<ul>
+<li>** 内容 **: 包含证书链（Certificate Chain），即中间证书（Intermediate Certificates）。</li>
+<li>** 作用 **: 中间证书是由根证书颁发的，它们帮助客户端（浏览器等）验证你的服务器证书的有效性。由于根证书是可信的，但服务器证书是中间证书颁发的，中间证书就起到了连接两者的作用。</li>
+<li>** 通常由谁提供 **: 由证书颁发机构（CA，Certificate Authority）提供。</li>
+<li>** 使用场景 **: 当服务器证书并不直接由根证书颁发，而是通过中间证书链时，你需要提供 <code>chain.pem</code> 来帮助客户端构建完整的信任链。</li>
+</ul>
+<ol start="2">
+<li><strong><code>chain-only.pem</code></strong></li>
+</ol>
+<ul>
+<li>** 内容 **: 这个文件与 <code>chain.pem</code> 类似，但它只包含中间证书，不包含服务器证书本身。</li>
+<li>** 作用 **: 只提供证书链，用于配合服务器证书文件一起使用，特别是当你有多个证书文件时。</li>
+<li>** 区别 **: <code>chain-only.pem</code> 不包含服务器的证书，只包含中间证书，而 <code>chain.pem</code> 可能包含服务器证书和中间证书。</li>
+<li>** 使用场景 **: 当证书颁发机构提供了单独的中间证书链文件时，且你需要手动指定链证书而不是合并在一起使用时。</li>
+</ul>
+<ol start="3">
+<li><strong><code>crt.pem</code></strong></li>
+</ol>
+<ul>
+<li>** 内容 <strong>: 这是服务器的主 SSL 证书文件，也叫 ** 证书文件（Certificate）</strong> 或 ** 公钥证书（Public Certificate）**。</li>
+<li>** 作用 **: 该文件包含服务器的公钥，它由证书颁发机构（CA）签名，标识你的网站或服务的身份。客户端（如浏览器）使用该文件验证你的网站是否是你声称的服务器。</li>
+<li>** 通常由谁提供 **: 由证书颁发机构（CA）提供，或者通过 Let’s Encrypt 这样的服务自动生成。</li>
+<li>** 使用场景 **: 在配置 HTTPS 时，服务器会将该证书发送给客户端，客户端用来验证服务器的合法性。</li>
+</ul>
+<ol start="4">
+<li><strong><code>key.pem</code></strong></li>
+</ol>
+<ul>
+<li>** 内容 <strong>: 这是 ** 私钥文件（Private Key）</strong>，对应你的服务器证书的私钥。</li>
+<li>** 作用 **: 私钥用于解密通过服务器公钥加密的通信数据，以及生成和验证数字签名。私钥非常重要，必须保密，不能泄露给第三方。如果私钥泄露，你的服务器通信就不再安全。</li>
+<li>** 由谁生成 **: 私钥通常由你在生成证书请求（CSR）时生成，并且不会由 CA 提供。</li>
+<li>** 使用场景 **: 在服务器中，它用于解密来自客户端的加密信息，是服务器端 HTTPS 连接中非常关键的部分。</li>
+</ul>
+<p> 证书文件的组合与作用</p>
+<ul>
+<li>** 单独的证书文件 ** (<code>crt.pem</code>): 这就是你的服务器证书，它由 CA 签署，标识你的服务器身份。</li>
+<li>** 证书链文件 ** (<code>chain.pem</code>&#x2F;<code>chain-only.pem</code>): 它们帮助客户端建立信任链，确保客户端可以通过中间证书找到可信的根证书。</li>
+<li>** 私钥文件 ** (<code>key.pem</code>): 私钥文件配合服务器证书一起工作，确保通信加密的安全性。</li>
+</ul>
+<p> 在 Nginx&#x2F;Apache 中如何使用</p>
+<p>在配置 HTTPS 时，通常需要同时指定这些文件，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name example.com;</span><br><span class="line"></span><br><span class="line">    ssl_certificate     /path/to/crt.pem;            # 服务器证书 </span><br><span class="line">    ssl_certificate_key /path/to/key.pem;            # 私钥 </span><br><span class="line">    ssl_trusted_certificate /path/to/chain.pem;      # 中间证书链 </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>ssl_certificate</code> 通常是服务器证书与中间证书合并在一起的文件（可以是 <code>crt.pem</code> 和 <code>chain.pem</code> 的组合）。而 <code>ssl_certificate_key</code> 则是服务器的私钥文件。</p>
+<p><strong>SSL 证书检查：</strong><a target="_blank" rel="noopener" href="https://ipw.cn/ssl/?site=ipw.cn">https://ipw.cn/ssl/?site=ipw.cn</a></p>
+<p>补全你的证书链：<a target="_blank" rel="noopener" href="https://whatsmychaincert.com/">https://whatsmychaincert.com/</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://cameiki.com">CaMeiki</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://cameiki.com/14434/">http://cameiki.com/14434/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://cameiki.com" target="_blank">CaMeiki</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/res/img/7143ced1e39eea1d646a358fd761733.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/res/img/7143ced1e39eea1d646a358fd761733.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">CaMeiki</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到CaMeiki的网站！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/14434/" title="记录一次配置 SSL">记录一次配置 SSL</a><time datetime="2024-10-26T04:00:00.000Z" title="发表于 2024-10-26 12:00:00">2024-10-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/61951/" title="alist ipv6 反向代理">alist ipv6 反向代理</a><time datetime="2024-10-20T16:00:00.000Z" title="发表于 2024-10-21 00:00:00">2024-10-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/56572/" title="ipv6 搭建 alist 并使用域名绑定">ipv6 搭建 alist 并使用域名绑定</a><time datetime="2024-10-20T09:51:34.000Z" title="发表于 2024-10-20 17:51:34">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/50479/" title="破解电信天翼网关超级管理员密码">破解电信天翼网关超级管理员密码</a><time datetime="2024-10-20T09:37:53.000Z" title="发表于 2024-10-20 17:37:53">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3218/" title="Markdown 语法速查">Markdown 语法速查</a><time datetime="2024-10-12T04:00:00.000Z" title="发表于 2024-10-12 12:00:00">2024-10-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By CaMeiki</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/res/js/script.js?1"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
