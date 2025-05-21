@@ -65,18 +65,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css 和 js 代码</title>
-    <url>/59732/</url>
-    <content><![CDATA[<p>内容来自网上</p>
-<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>导航栏居中</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#nav .menus_items &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: fit-content;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX (-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>透明度调节</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */</span><br><span class="line">.layout_post&gt;#post &#123;</span><br><span class="line">  /* 以下代表透明度为 0.7 可以自行修改 */</span><br><span class="line">  background: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 所有页面背景 */</span><br><span class="line">#aside_content .card-widget, #recent-posts&gt;.recent-post-item, .layout_page&gt;div:first-child:not (.recent-posts), .layout_post&gt;#page, .layout_post&gt;#post, .read-mode .layout_post&gt;#post&#123;</span><br><span class="line">  /* 以下代表透明度为 0.7 */</span><br><span class="line">  background: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 侧边卡片的透明度 */</span><br><span class="line">:root &#123;</span><br><span class="line">--card-bg: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 页脚透明 */</span><br><span class="line">#footer &#123;</span><br><span class="line">/* 以下代表透明度为 0.7 */</span><br><span class="line">background: rgba (255, 255, 255, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>标签页添加 w (ﾟДﾟ) w 不要走！再看看嘛！，回到本站显示♪(^∇^*) 欢迎回来！</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  // 动态标题 </span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener (&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        // 离开当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;w (ﾟДﾟ) w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout (titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        // 返回当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;♪(^∇^*) 欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        // 两秒后变回正常标题 </span><br><span class="line">        titleTime = setTimeout (function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
     <title>Markdown 语法速查</title>
     <url>/3218/</url>
     <content><![CDATA[<h1 id="Markdown-语法速查"><a href="#Markdown-语法速查" class="headerlink" title="Markdown 语法速查"></a>Markdown 语法速查</h1><p>Markdown 是一种轻量级标记语言，广泛用于文档和博客的撰写。以下是 Markdown 的常用语法速查表，方便查阅和使用。</p>
@@ -177,6 +165,113 @@
       </tags>
   </entry>
   <entry>
+    <title>css 和 js 代码</title>
+    <url>/59732/</url>
+    <content><![CDATA[<p>内容来自网上</p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>导航栏居中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#nav .menus_items &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: fit-content;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX (-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>透明度调节</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 文章页背景 最后一个参数表示透明度，范围是 0（完全透明）到 1（完全不透明 */</span><br><span class="line">.layout_post&gt;#post &#123;</span><br><span class="line">  /* 以下代表透明度为 0.7 可以自行修改 */</span><br><span class="line">  background: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 所有页面背景 */</span><br><span class="line">#aside_content .card-widget, #recent-posts&gt;.recent-post-item, .layout_page&gt;div:first-child:not (.recent-posts), .layout_post&gt;#page, .layout_post&gt;#post, .read-mode .layout_post&gt;#post&#123;</span><br><span class="line">  /* 以下代表透明度为 0.7 */</span><br><span class="line">  background: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 侧边卡片的透明度 */</span><br><span class="line">:root &#123;</span><br><span class="line">--card-bg: rgba (255, 255, 255, 0.5);</span><br><span class="line">&#125;</span><br><span class="line">/* 页脚透明 */</span><br><span class="line">#footer &#123;</span><br><span class="line">/* 以下代表透明度为 0.7 */</span><br><span class="line">background: rgba (255, 255, 255, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><p>标签页添加 w (ﾟДﾟ) w 不要走！再看看嘛！，回到本站显示♪(^∇^*) 欢迎回来！</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  // 动态标题 </span><br><span class="line">var OriginTitile = document.title;</span><br><span class="line">var titleTime;</span><br><span class="line">document.addEventListener (&#x27;visibilitychange&#x27;, function () &#123;</span><br><span class="line">    if (document.hidden) &#123;</span><br><span class="line">        // 离开当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;w (ﾟДﾟ) w 不要走！再看看嘛！&#x27;;</span><br><span class="line">        clearTimeout (titleTime);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        // 返回当前页面时标签显示内容 </span><br><span class="line">        document.title = &#x27;♪(^∇^*) 欢迎回来！&#x27; + OriginTitile;</span><br><span class="line">        // 两秒后变回正常标题 </span><br><span class="line">        titleTime = setTimeout (function () &#123;</span><br><span class="line">            document.title = OriginTitile;</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>Ubuntu 命令</title>
+    <url>/30497/</url>
+    <content><![CDATA[<h1 id="Ubuntu-命令"><a href="#Ubuntu-命令" class="headerlink" title="Ubuntu 命令"></a>Ubuntu 命令</h1><h2 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h2><ul>
+<li><p>更新软件包索引</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>此命令会从已配置的软件源拉取最新的软件包列表，以便后续安装或升级操作使用。</p>
+<ul>
+<li><p>升级所有已安装软件包</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt upgrade -y</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>将系统中所有可升级的软件包更新到最新版本，<code>-y</code> 自动确认提示</p>
+<ul>
+<li><p>安装新软件包</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install nginx </span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>安装 <code>nginx</code> Web 服务器（若已有则跳过）。</p>
+<ul>
+<li><p>删除软件包但保留配置</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt remove apache2</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>卸载 <code>apache2</code>，保留其配置文件以便日后重装时复用。</p>
+<ul>
+<li><p>彻底删除软件包及配置</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt purge mysql-server</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>完全移除 <code>mysql-server</code> 及其所有配置文件。</p>
+<ul>
+<li><p>列出已安装的软件包</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt list --installed</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>显示当前系统上所有已安装的软件包列表。</p>
+<h2 id="基本文件与目录操作"><a href="#基本文件与目录操作" class="headerlink" title="基本文件与目录操作"></a>基本文件与目录操作</h2><ul>
+<li><p>列出目录内容</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -al /var/log</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>使用 <code>-a</code> 显示包括隐藏文件，<code>-l</code> 以长格式列出 <code>/var/log</code> 下的所有文件。</p>
+<ul>
+<li><p>切换工作目录</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/projects</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>进入当前用户主目录下的 <code>projects</code> 目录。</p>
+<ul>
+<li><p>显示当前路径</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>打印当前所在的完整绝对路径。</p>
+<ul>
+<li><p>创建和删除目录</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/backup/2025-05-13</span><br><span class="line"><span class="built_in">rmdir</span> ~/old_folder</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><code>p</code> 可一次性创建多级目录；<code>rmdir</code> 仅删除空目录。</p>
+<ul>
+<li><p>复制、移动与删除文件</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> report.pdf ~/backup/</span><br><span class="line"><span class="built_in">mv</span> ~/notes.txt ~/projects/notes_old.txt</span><br><span class="line"><span class="built_in">rm</span> ~/temp.log</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>分别用于复制、重命名 &#x2F; 移动和删除文件。</p>
+<h2 id="压缩与归档"><a href="#压缩与归档" class="headerlink" title="压缩与归档"></a>压缩与归档</h2><ul>
+<li><p>创建 tar.gz 归档</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -czvf backup.tar.gz/home/user/data</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>将 <code>/home/user/data</code> 打包并使用 gzip 压缩，<code>v</code> 显示详细过程。</p>
+<ul>
+<li><p>解压 tar.gz</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xzvf backup.tar.gz -C /mnt/restore</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>解压到 <code>/mnt/restore</code> 目录。</p>
+<ul>
+<li><p>zip 与 unzip</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">zip -r archive.zip project_folder</span><br><span class="line">unzip archive.zip -d extracted_folder</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p> <code>r</code> 递归压缩目录，<code>d</code> 指定解压目标。</p>
+<ul>
+<li><p>其他格式（bzip2&#x2F;xz）</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -cjvf backup.tar.bz2 data/</span><br><span class="line">tar -cJvf backup.tar.xz data/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>分别使用 bzip2 和 xz 算法进行压缩。 </p>
+<h2 id="系统信息"><a href="#系统信息" class="headerlink" title="系统信息"></a>系统信息</h2><ul>
+<li><p>查看内核与架构</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">uname</span> -a</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>显示系统内核版本、架构及主机名等信息。</p>
+<ul>
+<li><p>发行版详情</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsb_release -a</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>输出 Ubuntu 版本与代号。 </p>
+<ul>
+<li><p>硬件信息汇总</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> lshw -short</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>快速列出硬件设备摘要；可加 <code>-html</code> 输出 HTML 报告。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>alist ipv6 反向代理</title>
     <url>/61951/</url>
     <content><![CDATA[<h1 id="alist-ipv6-反向代理"><a href="#alist-ipv6-反向代理" class="headerlink" title="alist ipv6 反向代理"></a>alist ipv6 反向代理</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载 nginx：<a href="https://nginx.org/cn/">https://nginx.org/cn/</a></p>
@@ -249,21 +344,65 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/16107/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>文章加密测试</title>
+    <url>/31776/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="b440e6ff65046c7fa9862cc8c4ff6d504a9c84159cf551be0b6f0f4dcb891312">e236132f8b84e8158acee2344521701e8cc13742df3113a4aba055c22cdec28f9849419a1eb9c6e76b8a9d9792b9f9b5a4389f73833019e80f5279d5fc6c674217e6a5c1fbbe148587fd12c5ef7fa8b05d7250a16376d9af6a2487054b1222f466e5b6855e827f08cee745531a09c2eee4d6a52a666f711ff4c403757b54ebf9933aea843fb632275b2aabad5e06c8e1ddf04c8f2c7c0d584b2daeabbe70aea7e744509b56c9d0af910229da947ac2b360b0c13aa2362c929cd59694b57d1a8d6726295470554b990660ac0bcb6374a90147dab2ee1eac9999be0a853e2b2bc11e8cfc82ee39267501591a7d8edbed799b6e9ffc121e0dfaae8d33a35457a299ad0ba2ab36a815b768eb6157febed6ff3971bef9fea5f11f2ba82ef26a4f238a58e215db91c4f8dc5cd2cd2b83ee7c83c15d8ef0601f044f025b41f3218149cf9958179037a3c879a41c6d0959f23ff7938221adfdb0db2fb2f59511d242f4eced99fb8f8ff59d0cd2425fa1bc113e2ff6ecae4cbce2ba98e44a7f4199373f0c98878476a6fda2c005a05cb47b59b47fd38cba5ec2c8dc4f4cfeefd93974b244b97fc7bdaed00ca8438b3e61399b10fa44fe690d4eacdfe41b31c9bf749d4ce34e0d28d581164ac2558deb0c9fd56cb122804316b766259d9712f9a4a0f2690fbc70e3cf21b9ddf9d8af042ee3a4dfd2149dee91ba769397c4a9183580ec6d75788b3ff61ba0452baabd7332c581d2c3b5c9f5d04471fa776689a29b77391a7e6955d04872c7a58636303c42c4b676a375204c837ecafb8d5b4dca417c3ee4bcf9d72c89e6df5e975a8c1c4486015af93c5cc810a6def63c7befbaa9126d10077b97a4574625fb0094cbb8067041ed93f58564ad0ffc629ba329444f8373e955d93c34118b4dfdbdc001e17ba65b8757fcd6f750570871c4ca9340621c6a2f63f64af9d72a655bc4e4d4daf0e36663d1c492cd8de40076b3e677f16a45018d55d0b53e4fe520cee2552b1e919735c186b99e7f2513393c8d6c9fa1033b56acb82297577ec3b16631ff6c363b7667002c17c3a66675df1fd6830bbe42a7d701ec974effe3ee8eda53d93e057bac4e0e5d4c7a645bfc705aef92704ef272f473b5a342b1f6671eb5e599f8c42987c763d6f173be7b41693858122734b3b0d7964912b91d0d978f92a507e04ee987b13e3400f8ade531d56a4f7e9bba1fbebd6300d420e4e433ee572d0becdc3de01c3f9cc3ccecfc01b762c774646bb67089ece46e7eeeacf83c35e39dacdf899534eb595b4275c4e0e7ebba9b2d661387f05bc48dbb803653febd7844a72680a84b0e5b54b63e970dd7d92fca46e902e3079108f2eb9c8e4879c17853edf9e3c2a8efc36ad46f3f9f1598bd556a63ffc9b76c1bd17c698109ec4b4f1b1b18ba1abe7f5d535feecc403787447691115d609b5259909c79a46ad60b35411bdbdc5a3aee812b416c74e55f2a87fa0750d93aae0acad41d8c7d7132a88b16abd05850cb253c964b763f7b510d22e9af62d7508234df1ce50f3c04f5a7ff8fe29f7b5f87fa93013c5eab60cbfce13847567eeba5dfd8f1d891189ef361159fd71c7f8857ba10a7431cef5478f0d96bbb6df5e84a1a9ea79c1d854a2738635ac41c6f9d8d3b3787b6f7187d987c2e4c2f3656c301eb1f0f7b919ad0cd86253b292f52ff4be6e8c78f8f027554a0648a67ea463c984e7c35651c58f7ba70a06c466a0efe07cf70bb42ede648779ec47fe95e281032356e4527138a5abe3e4a462a109688273ee4567902949ed2d29e53900642a141d5e984ee4b1aa2f92adc44550e0d20964c08a47fba71932f30ad40a604913547a3b118e74d0884edae5b595c7c07afc8431b3e4af17968bca4c342d735b532dd24c21f8c8687abd615927a557c53becbe04011ac4a69862e4b593f0d766fc4f914c7276d938a231330c5ad7a1a64b965c25f419a4caa76572f00c3bb685bc8aed4b6d7002fd04dad1ae3295fcd7f11383fcc41b895d5de9eb9a09a54349272d32a17e749a6f61329ea4f745b07236016ba85cfa58b3366c91e06798ea4222d057f317fb090826bcce5fbe6f87dc4868c434df0b8956d9f20ff01aea849f42ffc6d4e560e8d7eec119e7039a48594246f5b8f4019bcf552279dfc061ab0c056e95838c30862fbf284ffcaa03c7ac6eb05d6c09191f22aed8b5b71a1993eb68acba62df66bbcced12c9e19ed04756ad2c3131146150d0219ef976cc3bfe65fcec44c0cf393a92fd409d7e7b9caac86cad38e0290cc3b59f009285fde642f0ede6bda48804b4be4cf721ad63d6ecefa77cff8a9c4d1cdcc8568c218e6c005337861ec0972353a4ba81a2f7a8df7a631b12fbcc86feb6c71791264a2d40089f6473bdd6b83d59c11a3344467a4d74389a7d8d0a1d93997416210908d9d83abe0e08fef3fb2d019bfa452ff8059066d76bf2bbd843c4cb193141a918f08ceba10432c5f2c2de3885bdc6650fb52af8e31ecf7a43a3cf5c552d788173c706ddb0ab9328ae439c3a7ef85e6b3acb0bf8a0d751c030b15ab754ac6a46e6536d629956d6c8c1e58c5625ba706533c99cc3aee10d159e5f60fdf6b6006d084baf374295d4af0e54219818b80b935e1de9fba4d736596ce3de6997dcc8fed63294e043cf3b6f6f6da437a9229a6c8905fc11e6b924bbc9b1caf6aea9c179cbab5d6f3ed5bda5b023db18ef07bbd74e08de648b7c7ca19caad5f86730d0d6e68b147a33733c6240f5c12a028ff97f46ad35e68c0ad5105efd2c2dc004a453cc9059a015af8d312e191ffed1e905eed0ed97a7e9d0a272c10d1cd25a96fb3eda2ff2d43dae28116df047a30b8d6557e6f64e26ebc8eb2ece1483246153b0cfc43e7ff465cff239ad6eadc17607fb81e1838b9bd26ee485d20c07f0ac2987c73cfe6d8defb43f209dac09c6221a392b82057e4d21cf1b7fb1b719917f6f1680fb6efb290bcdfdcc1c539764357f63c06e66b36e5df9cec1ebf9998f10c389122fd0764e749de92138f592604377856e646aabdbb54b3115254e661af9ba917d86b513f29d44fec2eda84334642c3758aa83c6fb20170f51f21e5a63295b69298bfa662595f0d5f0f2ff43d26c36e1eb2b9b8dcd03817ca12d76bb908555f2146196b0debc92ce3808af0ec59f890ed2fda0dd39b9df106b89049bd085f2919754bf16eec1aa1db8cf3e6bc2ebeddae2f8d0c9dbe9729cd5b1426317d50dfd9a813de38d839e95633f75783abce0edd02e1573ddf1064ba8088d56521dd934b56d03d7995503cfbfda2356cff1e3b05e63a77968eda5acc2a3840392a8d3189761938d99686323180211cc2770eada5fb28683316ec6db19670f3d968dd669926fb1b228ef677645dfb50859af44ee7ae12fdcb34812e6be4795bf3ffdbb87555018424ed899f7fceb4a2f83bae125a9f36e05eac0d15a72d099b0fd47c02235e4983c2f844713b267985fdeb997e6900429fb5644970d782dab3bb361d55ea48fddd078cd161dcb49de849a22109eb1deed1af28558a34974846004f8b6bd9f9caa22b7d18245f29a94c127c292619f50ff020df9351a606c09cc6b8b2c91394fae180eaaf47dfdb141cae2779b1c39dcafad6b37afae58bf3ff408785d94a77982d390d7a4c0c842a890abe65d514554ee0746508efb1bf830ead040d0484d76723983c9fd93676cc1e5dddfe089eed81850a5771b1e0866d9713fc7d62bb4ccc2ccc3d5580f86e71a0aa24f1103081e9cea74f195e2c8ab6f610b8d09951d3f11753c8aa0ac8256895e03478588a1eced99993e8f0ecc80ca7c886569d2a832bf54313efba7c0d90ee36b5431e44b28c6d8aa62466403ca3fecd1cb5ca294b5a11857a627c4ac62291281314bafba09fca40a1f319da10a01c9140cc7358e60694d83f9382585aa10f26e827ad9f6eaf07bb72581d55bc3a</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+  </entry>
+  <entry>
+    <title>星穹铁道 grub 主题</title>
+    <url>/14870/</url>
+    <content><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">GRUB 主题</a><br><a href="https://github.com/voidlhf/StarRailGrubThemes">github 地址</a></p>
+<h3 id="以-Firefly-cn-为例"><a href="#以-Firefly-cn-为例" class="headerlink" title="以 Firefly_cn 为例"></a>以 Firefly_cn 为例</h3><p><img src="/res/img/post/Firefly_cn.png"><br>下载 Firefly 压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
+<h3 id="编辑-grub-文件"><a href="#编辑-grub-文件" class="headerlink" title="编辑 grub 文件"></a>编辑 grub 文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
+<p>文本底部添加主题<br>按 i 进入进入编辑模式<br>esc 退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="更新-grub"><a href="#更新-grub" class="headerlink" title="更新 grub"></a>更新 grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="至此大功告成，重启电脑！"><a href="#至此大功告成，重启电脑！" class="headerlink" title="至此大功告成，重启电脑！"></a>至此大功告成，重启电脑！</h3>]]></content>
+      <tags>
+        <tag>grub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Termux 常用命令</title>
+    <url>/58681/</url>
+    <content><![CDATA[<h1 id="Termux-常用命令"><a href="#Termux-常用命令" class="headerlink" title="Termux 常用命令"></a>Termux 常用命令</h1><p><a href="https://termux.dev/en/">termux 官网</a></p>
+<h2 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h2><p>保持环境最新并安装所需工具</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pkg update                <span class="comment"># 更新包列表并升级所有已安装包 </span></span><br><span class="line">pkg upgrade               <span class="comment"># 与 pkg update 配合，一次性升级所有包 </span></span><br><span class="line">pkg install &lt;package&gt;     <span class="comment"># 安装指定软件包，如 git、python 等 </span></span><br><span class="line">pkg uninstall &lt;package&gt;   <span class="comment"># 卸载已安装的软件包 </span></span><br><span class="line">pkg search &lt;keyword&gt;      <span class="comment"># 根据关键字搜索可安装包 </span></span><br><span class="line">pkg list-all              <span class="comment"># 列出所有可用包 </span></span><br><span class="line">pkg list-installed        <span class="comment"># 列出已安装的包 </span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="文件与目录操作"><a href="#文件与目录操作" class="headerlink" title="文件与目录操作"></a>文件与目录操作</h2><p>在 Linux 文件系统中浏览和管理文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span>           <span class="comment"># 列出当前目录下的文件和文件夹 </span></span><br><span class="line"><span class="built_in">ls</span> -a        <span class="comment"># 显示隐藏文件 </span></span><br><span class="line"><span class="built_in">ls</span> -lh       <span class="comment"># 以人类可读方式显示详细列表 </span></span><br><span class="line"><span class="built_in">cd</span> &lt;<span class="built_in">dir</span>&gt;     <span class="comment"># 进入指定目录；cd .. 返回上级 </span></span><br><span class="line"><span class="built_in">pwd</span>          <span class="comment"># 显示当前工作目录路径 </span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;name&gt; <span class="comment"># 新建目录 </span></span><br><span class="line"><span class="built_in">rm</span> &lt;file&gt;    <span class="comment"># 删除文件；rm -r &lt;dir&gt; 递归删除目录 </span></span><br><span class="line"><span class="built_in">cp</span> &lt;src&gt; &lt;dst&gt;        <span class="comment"># 复制文件；cp -R &lt;src_dir&gt; &lt;dst_dir&gt; 复制目录 </span></span><br><span class="line"><span class="built_in">mv</span> &lt;src&gt; &lt;dst&gt;        <span class="comment"># 移动或重命名文件 / 目录 </span></span><br><span class="line">clear                 <span class="comment"># 清屏 </span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p>修改软件源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">termux-change-repo</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p> home 目录添加 storage, 可以访问手机里的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
+
+<p> 一键更新</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg update -y &amp;&amp; pkg upgrade -y &amp;&amp; apt autoremove -y &amp;&amp; pkg clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装常用工具"><a href="#安装常用工具" class="headerlink" title="安装常用工具"></a>安装常用工具</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg update &amp;&amp; pkg install -y git vim openssh curl wget python tar</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg in aapt nodejs-lts alist nginx -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-zsh"><a href="#安装-zsh" class="headerlink" title="安装 zsh"></a>安装 zsh</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>我的方案是：色彩样式选择 <code>14</code>，字体样式选择 <code>6</code></p>
+<p>设置色彩样式：<br>输入 <code>chcolor</code> 命令更换色彩样式，或者执行 <code>~/.termux/colors.sh</code> 命令<br>设置字体：<br>运行 <code>chfont 命令</code> 更换字体，或者执行 <code>~/.termux/fonts.sh</code> 命令软件包管理</p>
+<hr>
 ]]></content>
   </entry>
   <entry>
@@ -313,38 +452,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>文章加密测试</title>
-    <url>/31776/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="6fe83618ad8bfa7cab97a8f1d8f61f822d15bd7dceff0952c24ce615d267aa9c">e236132f8b84e8158acee2344521701ec27cfbafddf9d2cc49c03c722e2aa0a8</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-  </entry>
-  <entry>
-    <title>星穹铁道 grub 主题</title>
-    <url>/14870/</url>
-    <content><![CDATA[<p><a href="https://www.gnome-look.org/p/2076542">GRUB 主题</a><br><a href="https://github.com/voidlhf/StarRailGrubThemes">github 地址</a></p>
-<h3 id="以-Firefly-cn-为例"><a href="#以-Firefly-cn-为例" class="headerlink" title="以 Firefly_cn 为例"></a>以 Firefly_cn 为例</h3><p><img src="/res/img/post/Firefly_cn.png"><br>下载 Firefly 压缩包，下载后解压，复制到 <strong>&#x2F;usr&#x2F;share&#x2F;grub&#x2F;themes</strong> 目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp -r Firefly_cn /usr/share/grub/themes</span><br></pre></td></tr></table></figure>
-<h3 id="编辑-grub-文件"><a href="#编辑-grub-文件" class="headerlink" title="编辑 grub 文件"></a>编辑 grub 文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure>
-<p>文本底部添加主题<br>按 i 进入进入编辑模式<br>esc 退出<br>保存更改后退出输入 :wq<br>放弃更改退出输入:q</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Firefly_cn/theme.txt&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="更新-grub"><a href="#更新-grub" class="headerlink" title="更新 grub"></a>更新 grub</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-
-<h3 id="至此大功告成，重启电脑！"><a href="#至此大功告成，重启电脑！" class="headerlink" title="至此大功告成，重启电脑！"></a>至此大功告成，重启电脑！</h3>]]></content>
-      <tags>
-        <tag>grub</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>添加自定义 css 和 js 文件</title>
     <url>/45104/</url>
     <content><![CDATA[<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>如果想魔改和美化，添加自定义文件是不可避免的。下面来详细说一下 css 和 js 文件的创建和引入，其他文件同理。<br>我们找到博客根目录下的 source 文件夹（主题的 source 虽然也可以，但是不推荐）<br>在里面创建 js 和 css 文件夹，也可以创建其他文件夹，例如存放图片的 img 文件夹，存放字体的 font 文件夹等等。</p>
@@ -365,9 +472,22 @@
       </tags>
   </entry>
   <entry>
-    <title>看看烟花吧</title>
-    <url>/63552/</url>
-    <content><![CDATA[]]></content>
+    <title>Hello World</title>
+    <url>/16107/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>破解电信天翼网关超级管理员密码</title>
@@ -392,6 +512,11 @@
 <p><img src="/images/4.png" alt="image.png"></p>
 <p>还有搜索 password，宽带账号密码也在里面</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>看看烟花吧</title>
+    <url>/63552/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>记录一次配置 SSL</title>
