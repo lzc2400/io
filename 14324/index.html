@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>我的装机必备软件清单 | CaMeiki</title><meta name="author" content="CaMeiki"><meta name="copyright" content="CaMeiki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我的装机必备软件清单 开发与工具 Python — 通用编程语言、脚本与科学计算常用。官网 &#x2F; 下载：https:&#x2F;&#x2F;www.python.org&#x2F;downloads&#x2F; Git — 代码版本管理工具。官网 &#x2F; 下载：https:&#x2F;&#x2F;git-scm.com&#x2F; Node.js — JavaScript 运行时，前端与工具链必备。官网 &#x2F; 下载：https:&#x2F;&#x2F;nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的装机必备软件清单">
+<meta property="og:url" content="http://cameiki.com/14324/index.html">
+<meta property="og:site_name" content="CaMeiki">
+<meta property="og:description" content="我的装机必备软件清单 开发与工具 Python — 通用编程语言、脚本与科学计算常用。官网 &#x2F; 下载：https:&#x2F;&#x2F;www.python.org&#x2F;downloads&#x2F; Git — 代码版本管理工具。官网 &#x2F; 下载：https:&#x2F;&#x2F;git-scm.com&#x2F; Node.js — JavaScript 运行时，前端与工具链必备。官网 &#x2F; 下载：https:&#x2F;&#x2F;nodejs">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cameiki.com/res/img/20241125020907.webp">
+<meta property="article:published_time" content="2025-08-31T08:07:24.000Z">
+<meta property="article:modified_time" content="2025-08-31T08:15:51.411Z">
+<meta property="article:author" content="CaMeiki">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cameiki.com/res/img/20241125020907.webp"><link rel="shortcut icon" href="/"><link rel="canonical" href="http://cameiki.com/14324/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"距离上次更新已过","messageNext":"天, 文章内容可能已过时"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '我的装机必备软件清单',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-08-31 16:15:51'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><link rel="stylesheet" href="/res/css/style.css?v1"><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg" style="background-image: url(res/img/67ab53f390f7c92240aed949027204b2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/res/img/20241125020907.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/HTML/index.html"><i class="fa-fw fas fa-file-user"></i><span> Demo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">CaMeiki</span></a><a class="nav-page-title" href="/"><span class="site-name">我的装机必备软件清单</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/HTML/index.html"><i class="fa-fw fas fa-file-user"></i><span> Demo</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">我的装机必备软件清单</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-31T08:07:24.000Z" title="发表于 2025-08-31 16:07:24">2025-08-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-31T08:15:51.411Z" title="更新于 2025-08-31 16:15:51">2025-08-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">663</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/14324/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/14324/#post-comment"><span class="waline-comment-count" data-path="/14324/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="我的装机必备软件清单"><a href="#我的装机必备软件清单" class="headerlink" title="我的装机必备软件清单"></a>我的装机必备软件清单</h1><hr>
+<h2 id="开发与工具"><a href="#开发与工具" class="headerlink" title="开发与工具"></a>开发与工具</h2><ul>
+<li><strong>Python</strong> — 通用编程语言、脚本与科学计算常用。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
+<li><strong>Git</strong> — 代码版本管理工具。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></li>
+<li><strong>Node.js</strong> — JavaScript 运行时，前端与工具链必备。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://nodejs.org/">https://nodejs.org/</a></li>
+<li><strong>VS Code</strong> — 轻量但强大的代码编辑器。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></li>
+</ul>
+<h2 id="办公与沟通"><a href="#办公与沟通" class="headerlink" title="办公与沟通"></a>办公与沟通</h2><ul>
+<li><strong>WPS Office</strong> — 文档、表格、PPT 一体化办公套件。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.wps.com/">https://www.wps.com/</a></li>
+<li>** 微信 (WeChat)** — 国内常用即时通讯（PC &#x2F; 手机多端）。<br>官网 &#x2F; 下载（中文版）：<a target="_blank" rel="noopener" href="https://weixin.qq.com/">https://weixin.qq.com/</a></li>
+<li><strong>QQ</strong> — 腾讯的另一款即时通讯工具。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://im.qq.com/">https://im.qq.com/</a></li>
+<li><strong>Telegram</strong> — 注重隐私、跨平台即时通讯。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://telegram.org/">https://telegram.org/</a></li>
+</ul>
+<h2 id="浏览器与云盘"><a href="#浏览器与云盘" class="headerlink" title="浏览器与云盘"></a>浏览器与云盘</h2><ul>
+<li><strong>Google Chrome</strong> — 主流浏览器（快速、扩展丰富）。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.google.com/chrome/">https://www.google.com/chrome/</a></li>
+<li>** 百度网盘 ** — 国内常用云存储 &#x2F; 同步服务。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://pan.baidu.com/">https://pan.baidu.com/</a></li>
+<li><strong>LocalSend</strong> — 局域网点对点文件传输（开源）。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://localsend.org/">https://localsend.org/</a></li>
+</ul>
+<h2 id="下载与管理"><a href="#下载与管理" class="headerlink" title="下载与管理"></a>下载与管理</h2><ul>
+<li><strong>Internet Download Manager (IDM)</strong> — 下载加速与管理（付费 &#x2F; 试用）。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.internetdownloadmanager.com/">https://www.internetdownloadmanager.com/</a></li>
+<li><strong>BitComet</strong> — 支持 BitTorrent&#x2F;HTTP&#x2F;FTP 的下载客户端。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.bitcomet.com/">https://www.bitcomet.com/</a></li>
+<li><strong>7-Zip</strong> — 高效免费压缩 &#x2F; 解压工具。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.7-zip.org/">https://www.7-zip.org/</a></li>
+<li><strong>WinRAR</strong> — 常用压缩 &#x2F; 解压工具（支持 RAR）。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.rarlab.com/">https://www.rarlab.com/</a></li>
+</ul>
+<h2 id="多媒体与娱乐"><a href="#多媒体与娱乐" class="headerlink" title="多媒体与娱乐"></a>多媒体与娱乐</h2><ul>
+<li><strong>PotPlayer</strong> — 功能强大的 Windows 视频播放器（Daum 出品）。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://potplayer.daum.net/">https://potplayer.daum.net/</a></li>
+<li>** 腾讯视频 (Tencent Video)** — 视频 &#x2F; 影视平台（国内）。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://v.qq.com/">https://v.qq.com/</a></li>
+<li>** 网易云音乐 (NetEase Cloud Music)** — 音乐流媒体与社区。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://music.163.com/">https://music.163.com/</a></li>
+<li><strong>Steam</strong> — 电脑游戏平台与商店。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://store.steampowered.com/">https://store.steampowered.com/</a></li>
+</ul>
+<h2 id="截图-录屏-翻译"><a href="#截图-录屏-翻译" class="headerlink" title="截图 &#x2F; 录屏 &#x2F; 翻译"></a>截图 &#x2F; 录屏 &#x2F; 翻译</h2><ul>
+<li><strong>Snipaste</strong> — 截图并贴回桌面，便捷的截图和标注工具。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.snipaste.com/">https://www.snipaste.com/</a></li>
+<li>**EV 录屏 ** — 国产的录屏与直播推流工具。<br>官网 &#x2F; 下载（企业 &#x2F; 产品页）：<a target="_blank" rel="noopener" href="https://www.ieway.cn/evcapture.html">https://www.ieway.cn/evcapture.html</a></li>
+<li><strong>TTime (ttime)</strong> — 截图翻译 &#x2F; OCR &#x2F; 划词翻译工具。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://ttime.timerecord.cn/en/introduce.html">https://ttime.timerecord.cn/en/introduce.html</a></li>
+</ul>
+<h2 id="系统与效率增强"><a href="#系统与效率增强" class="headerlink" title="系统与效率增强"></a>系统与效率增强</h2><ul>
+<li><strong>Everything</strong> — 文件名秒搜，Windows 下的超快搜索工具。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://www.voidtools.com/">https://www.voidtools.com/</a></li>
+<li><strong>TrafficMonitor</strong> — 桌面网速 &#x2F; CPU &#x2F; 内存监控（悬浮 &#x2F; 任务栏）。<br>源码 &#x2F; 下载（GitHub）：<a target="_blank" rel="noopener" href="https://github.com/zhongyang219/TrafficMonitor">https://github.com/zhongyang219/TrafficMonitor</a></li>
+<li><strong>Trae</strong> — AI 助手 &#x2F; 智能开发工具（TRA E&#x2F;Trae IDE）。<br>官网 &#x2F; 下载：<a target="_blank" rel="noopener" href="https://trae.ai/">https://trae.ai/</a></li>
+</ul>
+<hr>
+<p>转载修改自： <a target="_blank" rel="noopener" href="https://github.com/DroidKali/software-collections">https://github.com/DroidKali/software-collections</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://cameiki.com">CaMeiki</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://cameiki.com/14324/">http://cameiki.com/14324/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://cameiki.com" target="_blank">CaMeiki</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/res/img/20241125020907.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/res/img/20241125020907.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">CaMeiki</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到CaMeiki的网站！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95"><span class="toc-number">1.</span> <span class="toc-text">我的装机必备软件清单</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E4%B8%8E%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.</span> <span class="toc-text">开发与工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9E%E5%85%AC%E4%B8%8E%E6%B2%9F%E9%80%9A"><span class="toc-number">1.2.</span> <span class="toc-text">办公与沟通</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E4%BA%91%E7%9B%98"><span class="toc-number">1.3.</span> <span class="toc-text">浏览器与云盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">下载与管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%AA%92%E4%BD%93%E4%B8%8E%E5%A8%B1%E4%B9%90"><span class="toc-number">1.5.</span> <span class="toc-text">多媒体与娱乐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%AA%E5%9B%BE-%E5%BD%95%E5%B1%8F-%E7%BF%BB%E8%AF%91"><span class="toc-number">1.6.</span> <span class="toc-text">截图 &#x2F; 录屏 &#x2F; 翻译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%95%88%E7%8E%87%E5%A2%9E%E5%BC%BA"><span class="toc-number">1.7.</span> <span class="toc-text">系统与效率增强</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/8139/" title="批量修复视频文件">批量修复视频文件</a><time datetime="2025-09-12T15:39:50.000Z" title="发表于 2025-09-12 23:39:50">2025-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/27403/" title="FFmpeg 常用命令">FFmpeg 常用命令</a><time datetime="2025-09-12T14:50:43.000Z" title="发表于 2025-09-12 22:50:43">2025-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/14324/" title="我的装机必备软件清单">我的装机必备软件清单</a><time datetime="2025-08-31T08:07:24.000Z" title="发表于 2025-08-31 16:07:24">2025-08-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/30497/" title="Ubuntu 命令">Ubuntu 命令</a><time datetime="2025-05-21T13:44:05.000Z" title="发表于 2025-05-21 21:44:05">2025-05-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/58681/" title="Termux 常用命令">Termux 常用命令</a><time datetime="2025-05-21T13:08:22.000Z" title="发表于 2025-05-21 21:08:22">2025-05-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By CaMeiki</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://pinglun-lzc2400s-projects.vercel.app/',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: true,
+    }, {"emoji":["https://github.elemecdn.com/@waline/emojis@1.2.0/tieba/","https://github.elemecdn.com/@waline/emojis@1.2.0/bilibili/","https://github.elemecdn.com/@waline/emojis@1.2.0/qq/","https://github.elemecdn.com/@waline/emojis@1.1.0/weibo"],"reaction":true,"search":false}))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    btf.addGlobalFn('pjaxSendOnce', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = () => {
+    if (initFn) initWaline(initFn)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script src="/res/js/script.js?1"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
