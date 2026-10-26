@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>安装油封 | CaMeiki</title><meta name="author" content="CaMeiki"><meta name="copyright" content="CaMeiki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="油封安装指南油封安装指南 正确安装油封对于确保设备的最佳性能和使用寿命至关重要。本指南详细介绍了安装准备、各种安装技巧的执行以及常见错误的避免方法。我们的分步方法将帮助您每次都获得可靠的密封，防止泄漏和机械故障。 安装前妥善的准备工作对于油封的成功安装至关重要。确保密封件、轴和孔的正确准备和对齐，可以防止密封件失效、泄漏以及部件的过早磨损。  ** 对中检查 **：这包括在安装前验证密封件、轴和孔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装油封">
+<meta property="og:url" content="http://cameiki.com/27120/index.html">
+<meta property="og:site_name" content="CaMeiki">
+<meta property="og:description" content="油封安装指南油封安装指南 正确安装油封对于确保设备的最佳性能和使用寿命至关重要。本指南详细介绍了安装准备、各种安装技巧的执行以及常见错误的避免方法。我们的分步方法将帮助您每次都获得可靠的密封，防止泄漏和机械故障。 安装前妥善的准备工作对于油封的成功安装至关重要。确保密封件、轴和孔的正确准备和对齐，可以防止密封件失效、泄漏以及部件的过早磨损。  ** 对中检查 **：这包括在安装前验证密封件、轴和孔">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cameiki.com/res/img/20241125020907.webp">
+<meta property="article:published_time" content="2025-09-15T15:30:02.000Z">
+<meta property="article:modified_time" content="2025-09-21T06:23:31.615Z">
+<meta property="article:author" content="CaMeiki">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cameiki.com/res/img/20241125020907.webp"><link rel="shortcut icon" href="/"><link rel="canonical" href="http://cameiki.com/27120/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"距离上次更新已过","messageNext":"天, 文章内容可能已过时"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '安装油封',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-09-21 14:23:31'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><link rel="stylesheet" href="/res/css/style.css?v1"><meta name="generator" content="Hexo 8.1.2"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg" style="background-image: url(res/img/67ab53f390f7c92240aed949027204b2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/res/img/20241125020907.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/HTML/index.html"><i class="fa-fw fas fa-file-user"></i><span> Demo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">CaMeiki</span></a><a class="nav-page-title" href="/"><span class="site-name">安装油封</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/HTML/index.html"><i class="fa-fw fas fa-file-user"></i><span> Demo</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">安装油封</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-15T15:30:02.000Z" title="发表于 2025-09-15 23:30:02">2025-09-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-21T06:23:31.615Z" title="更新于 2025-09-21 14:23:31">2025-09-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/27120/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/27120/#post-comment"><span class="waline-comment-count" data-path="/27120/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="油封安装指南"><a href="#油封安装指南" class="headerlink" title="油封安装指南"></a>油封安装指南</h1><h2 id="油封安装指南-1"><a href="#油封安装指南-1" class="headerlink" title="油封安装指南"></a>油封安装指南</h2><p><img src="/images/oil-seal/Oil-Seals.jpg" alt="Image 23"></p>
+<p>正确安装油封对于确保设备的最佳性能和使用寿命至关重要。本指南详细介绍了安装准备、各种安装技巧的执行以及常见错误的避免方法。我们的分步方法将帮助您每次都获得可靠的密封，防止泄漏和机械故障。</p>
+<h2 id="安装前"><a href="#安装前" class="headerlink" title="安装前"></a>安装前</h2><p>妥善的准备工作对于油封的成功安装至关重要。确保密封件、轴和孔的正确准备和对齐，可以防止密封件失效、泄漏以及部件的过早磨损。</p>
+<ul>
+<li>** 对中检查 **：这包括在安装前验证密封件、轴和孔的对中情况。使用直尺或激光工具确保同心度和垂直度。未对中会导致压力分布不均匀，从而导致早期磨损和潜在泄漏。</li>
+<li>** 密封件和内孔的检查 **：安装前，清洁密封件、轴和内孔。然后检查每个部件是否有缺陷、磨损或残留物。使用目视检查和触觉反馈，确保不存在任何瑕疵。未检测到的瑕疵或碎屑可能导致压力下的泄漏或爆裂。</li>
+<li>** 润滑 **：为了便于安装和初始操作，适当的润滑至关重要。将兼容的润滑剂均匀涂抹在密封唇和轴上，但避免过度润滑，以防止安装过程中产生液压。润滑不足会导致密封件过早磨损或卡住。</li>
+</ul>
+<h2 id="安装技术"><a href="#安装技术" class="headerlink" title="安装技术"></a>安装技术</h2><p>必须精心选择和执行安装技术，以确保密封件在整个使用寿命期间都能正常运转。每种技术都针对特定的安装需求，并确保长期可靠性。</p>
+<h3 id="外壳表面止动件安装"><a href="#外壳表面止动件安装" class="headerlink" title="外壳表面止动件安装"></a>外壳表面止动件安装</h3><p><img src="/images/oil-seal/Housing-Surface-Stop.jpg" alt="Image 24"></p>
+<p>当密封深度必须与轴承座表面精确匹配时，可使用此技术。该技术要求将安装工具停在加工好的轴承座表面。确保工具与轴完全垂直，以获得最佳效果。对于需要密封件相对于轴承座表面精确定位的应用，此技术是理想之选。</p>
+<h3 id="外壳止动装置"><a href="#外壳止动装置" class="headerlink" title="外壳止动装置"></a>外壳止动装置</h3><p><img src="/images/oil-seal/Housing-Stop.jpg" alt="Image 25"></p>
+<p>对于壳体止动件的安装技术，应将密封件的深度设置为与孔的内肩齐平。此技术可确保密封件与壳体内部组件完美对齐。深度计在此至关重要，可确保密封件的位置正确。</p>
+<h3 id="表面停止安装"><a href="#表面停止安装" class="headerlink" title="表面停止安装"></a>表面停止安装</h3><p><img src="/images/oil-seal/Surface-Stop.jpg" alt="Image 26"></p>
+<p>与外壳表面止动技术类似，该方法使用机加工外壳表面的止动装置来设定密封深度。它通常用于外表面平坦的外壳。通过目视检查或使用塞尺检查位置，可确保位置准确。</p>
+<h3 id="轴挡块安装"><a href="#轴挡块安装" class="headerlink" title="轴挡块安装"></a>轴挡块安装</h3><p>该技术需要将安装工具与轴面对齐，以精确定位密封件。安装后务必仔细检查对齐情况，以避免将来出现错位问题。</p>
+<h3 id="在花键上安装密封件"><a href="#在花键上安装密封件" class="headerlink" title="在花键上安装密封件"></a>在花键上安装密封件</h3><p> 在通过花键、键槽或螺纹时，必须采取额外的预防措施，以免损坏密封件。充足的润滑有助于在这一精细的工序中保护密封唇。</p>
+<h3 id="锁扣板安装"><a href="#锁扣板安装" class="headerlink" title="锁扣板安装"></a>锁扣板安装</h3><p> 挡板用于精确控制密封件的安装深度和对齐，尤其适用于较大的密封件。缓慢、可控的移动对于确保正确安装和防止变形至关重要。</p>
+<h2 id="应避免的常见错误"><a href="#应避免的常见错误" class="headerlink" title="应避免的常见错误"></a>应避免的常见错误</h2><p>识别并避免常见的安装错误是确保油封使用寿命和有效性的关键。以下是一些需要注意的常见错误：</p>
+<ul>
+<li>** 密封翘起 **：安装过程中错位会导致密封唇一侧与轴的干涉过大，从而导致不均匀磨损或泄漏。使用合适尺寸的安装工具是预防此类问题的关键。</li>
+<li>** 回弹 **：密封件的橡胶覆盖外径可能具有弹性记忆，导致其在被压入后从安装点缩回。确保孔清洁并提供足够的摩擦力有助于防止回弹。</li>
+<li>** 驱动方式错误 **：使用尺寸或材质不正确的驱动环会导致密封件变形和错位。请务必选择正确的驱动环进行安装。</li>
+<li>** 安装工具尺寸过小 **：如果安装工具的驱动直径过小，安装过程中可能会导致密封件变形。选择驱动直径合适的工具可以避免此问题。</li>
+<li>** 设计不当的安装工具 **：非针对特定密封件定制的工具可能导致安装不当并可能造成损坏。请设计或选择专门针对所用密封件设计的工具。</li>
+<li>** 错位误差 **：如果工具和孔未准确对准，密封件可能会在孔内变形或翘起，从而造成泄漏。正确对准对于成功安装至关重要。</li>
+</ul>
+<p><img src="/images/oil-seal/Seal-Cocking.jpg" alt="   "></p>
+<p>密封翘起</p>
+<p><img src="/images/oil-seal/Incorrect-Tool-Size.jpg" alt="   "></p>
+<p>尺寸过小的工具</p>
+<p><img src="/images/oil-seal/page_62.png" alt=" "></p>
+<p><img src="/images/oil-seal/page_63.png" alt=" "></p>
+<p><img src="/images/oil-seal/page_64.png" alt=" "></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://cameiki.com">CaMeiki</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://cameiki.com/27120/">http://cameiki.com/27120/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://cameiki.com" target="_blank">CaMeiki</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/res/img/20241125020907.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/res/img/20241125020907.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">CaMeiki</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到CaMeiki的网站！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B2%B9%E5%B0%81%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">油封安装指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B2%B9%E5%B0%81%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97-1"><span class="toc-number">1.1.</span> <span class="toc-text">油封安装指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D"><span class="toc-number">1.2.</span> <span class="toc-text">安装前</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8A%80%E6%9C%AF"><span class="toc-number">1.3.</span> <span class="toc-text">安装技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E5%A3%B3%E8%A1%A8%E9%9D%A2%E6%AD%A2%E5%8A%A8%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.1.</span> <span class="toc-text">外壳表面止动件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E5%A3%B3%E6%AD%A2%E5%8A%A8%E8%A3%85%E7%BD%AE"><span class="toc-number">1.3.2.</span> <span class="toc-text">外壳止动装置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E9%9D%A2%E5%81%9C%E6%AD%A2%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.3.</span> <span class="toc-text">表面停止安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%B4%E6%8C%A1%E5%9D%97%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.4.</span> <span class="toc-text">轴挡块安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E8%8A%B1%E9%94%AE%E4%B8%8A%E5%AE%89%E8%A3%85%E5%AF%86%E5%B0%81%E4%BB%B6"><span class="toc-number">1.3.5.</span> <span class="toc-text">在花键上安装密封件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%81%E6%89%A3%E6%9D%BF%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.6.</span> <span class="toc-text">锁扣板安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E9%81%BF%E5%85%8D%E7%9A%84%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="toc-number">1.4.</span> <span class="toc-text">应避免的常见错误</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/9098/" title="力士乐 A10VO71DFLR/3X 液压泵密封件清单">力士乐 A10VO71DFLR/3X 液压泵密封件清单</a><time datetime="2026-04-10T14:29:45.000Z" title="发表于 2026-04-10 22:29:45">2026-04-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/27120/" title="安装油封">安装油封</a><time datetime="2025-09-15T15:30:02.000Z" title="发表于 2025-09-15 23:30:02">2025-09-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/35095/" title="硬盘空间的救赎">硬盘空间的救赎</a><time datetime="2025-09-13T19:43:01.000Z" title="发表于 2025-09-14 03:43:01">2025-09-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/8139/" title="批量修复视频文件">批量修复视频文件</a><time datetime="2025-09-12T15:39:50.000Z" title="发表于 2025-09-12 23:39:50">2025-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/27403/" title="FFmpeg 常用命令">FFmpeg 常用命令</a><time datetime="2025-09-12T14:50:43.000Z" title="发表于 2025-09-12 22:50:43">2025-09-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By CaMeiki</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://pinglun-lzc2400s-projects.vercel.app/',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: true,
+    }, {"emoji":["https://github.elemecdn.com/@waline/emojis@1.2.0/tieba/","https://github.elemecdn.com/@waline/emojis@1.2.0/bilibili/","https://github.elemecdn.com/@waline/emojis@1.2.0/qq/","https://github.elemecdn.com/@waline/emojis@1.1.0/weibo"],"reaction":true,"search":false}))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    btf.addGlobalFn('pjaxSendOnce', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = () => {
+    if (initFn) initWaline(initFn)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script src="/res/js/script.js?1"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

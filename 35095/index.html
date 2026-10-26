@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>硬盘空间的救赎 | CaMeiki</title><meta name="author" content="CaMeiki"><meta name="copyright" content="CaMeiki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一次磁盘爆满警报，引出了一场近 400GB 空间的神秘失踪案。元凶竟是熟悉的微信，而根源却是一个深藏不露的磁盘参数 ——2MB 的簇大小。本文不仅记录了完整的解决过程，更附上一份实用的簇大小选型指南，助你彻底优化磁盘空间。 一、 序幕：磁盘爆红，空间不翼而飞一切始于我的 E 盘突然亮起的红色空间警告。作为一个有整理习惯的用户，我深感疑惑。通过查看文件夹属性，我看到了一个令人瞠目结舌的画面： WeC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="硬盘空间的救赎">
+<meta property="og:url" content="http://cameiki.com/35095/index.html">
+<meta property="og:site_name" content="CaMeiki">
+<meta property="og:description" content="一次磁盘爆满警报，引出了一场近 400GB 空间的神秘失踪案。元凶竟是熟悉的微信，而根源却是一个深藏不露的磁盘参数 ——2MB 的簇大小。本文不仅记录了完整的解决过程，更附上一份实用的簇大小选型指南，助你彻底优化磁盘空间。 一、 序幕：磁盘爆红，空间不翼而飞一切始于我的 E 盘突然亮起的红色空间警告。作为一个有整理习惯的用户，我深感疑惑。通过查看文件夹属性，我看到了一个令人瞠目结舌的画面： WeC">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cameiki.com/res/img/20241125020907.webp">
+<meta property="article:published_time" content="2025-09-13T19:43:01.000Z">
+<meta property="article:modified_time" content="2025-09-13T19:51:10.137Z">
+<meta property="article:author" content="CaMeiki">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cameiki.com/res/img/20241125020907.webp"><link rel="shortcut icon" href="/"><link rel="canonical" href="http://cameiki.com/35095/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"距离上次更新已过","messageNext":"天, 文章内容可能已过时"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '硬盘空间的救赎',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-09-14 03:51:10'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><link rel="stylesheet" href="/res/css/style.css?v1"><meta name="generator" content="Hexo 8.1.2"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg" style="background-image: url(res/img/67ab53f390f7c92240aed949027204b2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/res/img/20241125020907.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/HTML/index.html"><i class="fa-fw fas fa-file-user"></i><span> Demo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">CaMeiki</span></a><a class="nav-page-title" href="/"><span class="site-name">硬盘空间的救赎</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/HTML/index.html"><i class="fa-fw fas fa-file-user"></i><span> Demo</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">硬盘空间的救赎</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-13T19:43:01.000Z" title="发表于 2025-09-14 03:43:01">2025-09-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-13T19:51:10.137Z" title="更新于 2025-09-14 03:51:10">2025-09-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span class="waline-pageview-count" data-path="/35095/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/35095/#post-comment"><span class="waline-comment-count" data-path="/35095/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>一次磁盘爆满警报，引出了一场近 400GB 空间的神秘失踪案。元凶竟是熟悉的微信，而根源却是一个深藏不露的磁盘参数 ——2MB 的簇大小。本文不仅记录了完整的解决过程，更附上一份实用的簇大小选型指南，助你彻底优化磁盘空间。</p>
+<h4 id="一、-序幕：磁盘爆红，空间不翼而飞"><a href="#一、-序幕：磁盘爆红，空间不翼而飞" class="headerlink" title="一、 序幕：磁盘爆红，空间不翼而飞"></a>一、 序幕：磁盘爆红，空间不翼而飞</h4><p>一切始于我的 E 盘突然亮起的红色空间警告。作为一个有整理习惯的用户，我深感疑惑。通过查看文件夹属性，我看到了一个令人瞠目结舌的画面：</p>
+<p><code>WeChat Files</code> 文件夹：</p>
+<ul>
+<li>大小：49.7 GB (嗯，多年聊天记录，合理)</li>
+<li>占用空间：436 GB (？！)</li>
+<li>包含：204,781 个文件，3,668 个文件夹</li>
+</ul>
+<p>近 400GB 的空间差额，如同蒸发了一般。这绝非简单的 “文件垃圾”，而更像是一种 “系统性的空间浪费”。</p>
+<h4 id="二、-探案：层层深入，锁定-“簇”-这个元凶"><a href="#二、-探案：层层深入，锁定-“簇”-这个元凶" class="headerlink" title="二、 探案：层层深入，锁定 “簇” 这个元凶"></a>二、 探案：层层深入，锁定 “簇” 这个元凶</h4><p>初步研究表明，问题与硬盘存储的基本单位 ——“簇”（Cluster）有关。</p>
+<ul>
+<li>硬盘就像一座酒店，被划分为无数个大小固定的 “房间”（簇）。每个文件，无论多小，都必须独占至少一个房间。</li>
+<li>微信是 “小文件制造机”，产生了超过 20 万个图片、表情、视频等小文件。</li>
+<li>如果 “房间” 太大，而住进去的 “文件” 很小，就会造成巨大的空间浪费。</li>
+</ul>
+<p>起初，我以为是常见的 4KB 簇浪费问题。但常规的清理方法治标不治本。我决定追查到底。</p>
+<h4 id="三、-终局：终极取证-——-命令行揭示真相"><a href="#三、-终局：终极取证-——-命令行揭示真相" class="headerlink" title="三、 终局：终极取证 —— 命令行揭示真相"></a>三、 终局：终极取证 —— 命令行揭示真相</h4><p>我使用了 Windows 系统自带的强大诊断命令，揭开了最终的谜底。打开 PowerShell 或 CMD，输入：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fsutil fsinfo ntfsinfo E:</span><br></pre></td></tr></table></figure>
+
+<p>命令输出中的一行信息，让一切真相大白：<br><code>每群集字节数 ： 2097152 (2 MB)</code></p>
+<p>真相就是：我的 E 盘在格式化时，被设置为了 2MB 的簇大小！</p>
+<p>这意味着： 一个只有 50KB 的微信图片，在我的硬盘上竟然要独占一个整整 2MB 的房间！浪费了将近 2MB 的空间。当这个浪费乘以 20 万次，400GB 的空间黑洞就这样产生了。</p>
+<h4 id="四、-救赎：手术刀式的解决方案-——-格式化重来"><a href="#四、-救赎：手术刀式的解决方案-——-格式化重来" class="headerlink" title="四、 救赎：手术刀式的解决方案 —— 格式化重来"></a>四、 救赎：手术刀式的解决方案 —— 格式化重来</h4><p>找到根源后，解决方案变得清晰而彻底：备份数据，重新格式化，并指定正确的簇大小。</p>
+<p>我的操作流程：</p>
+<ol>
+<li>全盘备份：将 E 盘所有重要数据转移至其他安全位置。</li>
+<li>执行格式化：<ul>
+<li>右键点击 E 盘 -&gt; 选择 “格式化”。</li>
+<li>文件系统：NTFS（不变）。</li>
+<li>分配单元大小：在此选择下拉菜单中的 “4096 字节”。这是最关键的一步！</li>
+<li>执行快速格式化。</li>
+</ul>
+</li>
+<li>恢复与验证：将数据复制回新格式化的 E 盘，并重新设置微信文件存储路径。</li>
+</ol>
+<p>完成后，我再次查看微信文件夹属性，“大小” 与 “占用空间” 已变得几乎一致。空间利用效率从惊人的 9 倍浪费恢复到了近乎 1：1 的健康状态，一场完美的硬盘空间 “救赎” 就此完成。</p>
+<hr>
+<h2 id="附录：簇大小选型与估算指南"><a href="#附录：簇大小选型与估算指南" class="headerlink" title="附录：簇大小选型与估算指南"></a>附录：簇大小选型与估算指南</h2><h4 id="簇大小选型指南（快速参考表）"><a href="#簇大小选型指南（快速参考表）" class="headerlink" title="簇大小选型指南（快速参考表）"></a>簇大小选型指南（快速参考表）</h4><table>
+<thead>
+<tr>
+<th align="left">簇大小</th>
+<th align="left">典型适用场景</th>
+<th align="left">优点</th>
+<th align="left">缺点</th>
+<th align="left">推荐度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">4KB</td>
+<td align="left">系统盘、软件、文档、聊天缓存（微信 &#x2F; QQ）、源码、照片</td>
+<td align="left">磁盘利用率最高、兼容性最好、Windows 默认</td>
+<td align="left">对极大文件顺序读写略逊于大簇</td>
+<td align="left"><strong>★★★★★（首选）</strong></td>
+</tr>
+<tr>
+<td align="left">16KB</td>
+<td align="left">混合用途分区（同时包含程序和小型游戏）</td>
+<td align="left">在空间和性能间取得平衡</td>
+<td align="left">小文件仍有空间浪费</td>
+<td align="left"><strong>★★★☆☆</strong></td>
+</tr>
+<tr>
+<td align="left">64KB</td>
+<td align="left">大型游戏、视频编辑素材、虚拟机硬盘文件</td>
+<td align="left">大文件读写性能优，减少碎片</td>
+<td align="left">小文件浪费显著</td>
+<td align="left"><strong>★★★★☆</strong></td>
+</tr>
+<tr>
+<td align="left">256KB &#x2F; 512KB</td>
+<td align="left">大型数据库、RAW 视频文件、光盘镜像</td>
+<td align="left">极致的顺序读写吞吐量</td>
+<td align="left">普通用户不适用，空间浪费严重</td>
+<td align="left"><strong>★★☆☆☆</strong></td>
+</tr>
+<tr>
+<td align="left">1MB &#x2F; 2MB（灾难）</td>
+<td align="left">极特殊用途（如监控录像）</td>
+<td align="left">几乎无碎片</td>
+<td align="left">对普通文件系统是灾难性浪费（本文案例）</td>
+<td align="left"><strong>★☆☆☆☆（避免）</strong></td>
+</tr>
+</tbody></table>
+<p>选型一句话原则：</p>
+<ul>
+<li>存小文件 → 果断 <code>4KB</code></li>
+<li>存大文件 → 选择 <code>64KB</code></li>
+<li>不懂怎么选 → 无脑 “默认” 或 4KB</li>
+</ul>
+<h4 id="空间占用快速估算方法"><a href="#空间占用快速估算方法" class="headerlink" title="空间占用快速估算方法"></a>空间占用快速估算方法</h4><p>你可以用一个简单的公式来预估空间浪费：<br><code>预计占用空间 ≈ max (文件实际总大小，文件总数 × 簇大小)</code></p>
+<ul>
+<li>当 <code>文件总数 × 簇大小</code> &gt; <code>文件总大小</code>：说明小文件众多，空间浪费严重，总占用由簇大小主导。</li>
+<li>当 <code>文件总大小</code> &gt; <code>文件总数 × 簇大小</code>：说明文件都比较大，总占用由实际大小主导。</li>
+</ul>
+<p>以我的灾难现场为例：</p>
+<ul>
+<li>文件总数 &#x3D; 204,781</li>
+<li>实际总大小 &#x3D; 53.44 GB</li>
+<li>簇大小 &#x3D; 2 MB</li>
+</ul>
+<p>计算：<code>204,781 × 2 MB ≈ 400 GB</code> → 远大于 <code>53.44 GB</code><br>结论：空间占用由簇大小主导，最终占用 ≈ 400+ GB，与实际情况（436GB）吻合。</p>
+<p>若使用 4KB 簇计算：<code>204,781 × 4 KB ≈ 0.8 GB</code> → 远小于 <code>53.44 GB</code><br>结论：空间占用由实际大小主导，最终占用 ≈ 53.44 GB，高效利用。</p>
+<hr>
+<h2 id="常见问答（FAQ）"><a href="#常见问答（FAQ）" class="headerlink" title="常见问答（FAQ）"></a>常见问答（FAQ）</h2><p>Q：为什么 Windows 默认是 4KB？<br>A：因为它在现代硬件上取得了空间利用率和读写性能的最佳平衡，并与内存管理页大小对齐，兼容性最好。</p>
+<p>Q：更改簇大小会影响系统稳定性或导致文件损坏吗？<br>A：不会。正确地进行格式化（前提是已备份数据）不会影响稳定性或损坏文件本身。它只是改变了文件在磁盘上的存储方式。</p>
+<p>Q：能不格式化就改变簇大小吗？<br>A：不能。改变现有分区的簇大小必须通过备份数据、重新格式化、再恢复数据的流程来完成。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://cameiki.com">CaMeiki</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://cameiki.com/35095/">http://cameiki.com/35095/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://cameiki.com" target="_blank">CaMeiki</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/res/img/20241125020907.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/res/img/20241125020907.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">CaMeiki</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到CaMeiki的网站！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E5%BA%8F%E5%B9%95%EF%BC%9A%E7%A3%81%E7%9B%98%E7%88%86%E7%BA%A2%EF%BC%8C%E7%A9%BA%E9%97%B4%E4%B8%8D%E7%BF%BC%E8%80%8C%E9%A3%9E"><span class="toc-number">1.1.</span> <span class="toc-text">一、 序幕：磁盘爆红，空间不翼而飞</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-%E6%8E%A2%E6%A1%88%EF%BC%9A%E5%B1%82%E5%B1%82%E6%B7%B1%E5%85%A5%EF%BC%8C%E9%94%81%E5%AE%9A-%E2%80%9C%E7%B0%87%E2%80%9D-%E8%BF%99%E4%B8%AA%E5%85%83%E5%87%B6"><span class="toc-number">1.2.</span> <span class="toc-text">二、 探案：层层深入，锁定 “簇” 这个元凶</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81-%E7%BB%88%E5%B1%80%EF%BC%9A%E7%BB%88%E6%9E%81%E5%8F%96%E8%AF%81-%E2%80%94%E2%80%94-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8F%AD%E7%A4%BA%E7%9C%9F%E7%9B%B8"><span class="toc-number">1.3.</span> <span class="toc-text">三、 终局：终极取证 —— 命令行揭示真相</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E3%80%81-%E6%95%91%E8%B5%8E%EF%BC%9A%E6%89%8B%E6%9C%AF%E5%88%80%E5%BC%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E2%80%94%E2%80%94-%E6%A0%BC%E5%BC%8F%E5%8C%96%E9%87%8D%E6%9D%A5"><span class="toc-number">1.4.</span> <span class="toc-text">四、 救赎：手术刀式的解决方案 —— 格式化重来</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95%EF%BC%9A%E7%B0%87%E5%A4%A7%E5%B0%8F%E9%80%89%E5%9E%8B%E4%B8%8E%E4%BC%B0%E7%AE%97%E6%8C%87%E5%8D%97"><span class="toc-number">2.</span> <span class="toc-text">附录：簇大小选型与估算指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B0%87%E5%A4%A7%E5%B0%8F%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%EF%BC%88%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83%E8%A1%A8%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">簇大小选型指南（快速参考表）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%8D%A0%E7%94%A8%E5%BF%AB%E9%80%9F%E4%BC%B0%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">空间占用快速估算方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E7%AD%94%EF%BC%88FAQ%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">常见问答（FAQ）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/9098/" title="力士乐 A10VO71DFLR/3X 液压泵密封件清单">力士乐 A10VO71DFLR/3X 液压泵密封件清单</a><time datetime="2026-04-10T14:29:45.000Z" title="发表于 2026-04-10 22:29:45">2026-04-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/27120/" title="安装油封">安装油封</a><time datetime="2025-09-15T15:30:02.000Z" title="发表于 2025-09-15 23:30:02">2025-09-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/35095/" title="硬盘空间的救赎">硬盘空间的救赎</a><time datetime="2025-09-13T19:43:01.000Z" title="发表于 2025-09-14 03:43:01">2025-09-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/8139/" title="批量修复视频文件">批量修复视频文件</a><time datetime="2025-09-12T15:39:50.000Z" title="发表于 2025-09-12 23:39:50">2025-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/27403/" title="FFmpeg 常用命令">FFmpeg 常用命令</a><time datetime="2025-09-12T14:50:43.000Z" title="发表于 2025-09-12 22:50:43">2025-09-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By CaMeiki</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://pinglun-lzc2400s-projects.vercel.app/',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: true,
+    }, {"emoji":["https://github.elemecdn.com/@waline/emojis@1.2.0/tieba/","https://github.elemecdn.com/@waline/emojis@1.2.0/bilibili/","https://github.elemecdn.com/@waline/emojis@1.2.0/qq/","https://github.elemecdn.com/@waline/emojis@1.1.0/weibo"],"reaction":true,"search":false}))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    btf.addGlobalFn('pjaxSendOnce', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = () => {
+    if (initFn) initWaline(initFn)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script src="/res/js/script.js?1"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
